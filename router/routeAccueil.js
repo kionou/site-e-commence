@@ -3,7 +3,8 @@ const controlleur = require("../controllers/AccueilControl");
 const router = express.Router()
 
 
-router.get('/',controlleur.Accueil)
+router.get('/',controlleur.Accueil);
+router.get('/detail',controlleur.Detail)
 
 
 

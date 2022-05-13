@@ -18,21 +18,51 @@ $('.content-slick').slick({
 
 
 
+// $('.container-cadre').slick({
+// slidesToShow: 2,
+//   slidesToScroll: 1
+// });
+
+// var filtered = false;
+
+// $('.js-filter').on('click', function(){
+//   if (filtered === false) {
+//     $('.container-cadre').slick('slickFilter',':even');
+//     $(this).text('Unfilter Slides');
+//     filtered = true;
+//   } else {
+//     $('.container-cadre').slick('slickUnfilter');
+//     $(this).text('Filter Slides');
+//     filtered = false;
+//   }
+// });
+
+
+
+// $('.container-cadre').slick({
+//   slidesToShow: 1,
+//   slidesToScroll: 1,
+//   arrows: false,
+//   fade: true,
+//   asNavFor: '.slider-nav'
+// });
+// $('.container-cadre').slick({
+//   slidesToShow: 3,
+//   slidesToScroll: 1,
+//   asNavFor: '.slider-for',
+//   dots: true,
+//   centerMode: true,
+//   focusOnSelect: true
+// });
+
+
+
 $('.container-cadre').slick({
-  slidesToShow: 2,
-  slidesToScroll: 2
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 6000,
+  infinite:true
 });
 
-var filtered = false;
 
-$('.js-filter').on('click', function(){
-  if (filtered === false) {
-    $('.filtering').slick('slickFilter',':even');
-    $(this).text('Unfilter Slides');
-    filtered = true;
-  } else {
-    $('.filtering').slick('slickUnfilter');
-    $(this).text('Filter Slides');
-    filtered = false;
-  }
-});

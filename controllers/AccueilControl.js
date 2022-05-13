@@ -6,6 +6,11 @@ const controlleur = class{
         res.render('index')
 
     }
+
+    static Detail = (req=request,res=response)=>{
+        res.render('detail')
+
+    }
 }
 
 
