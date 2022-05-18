@@ -103,7 +103,7 @@ header {
     transform: translate(-50% , -50%);
     width: 58%;
     height: 64%;
-    border: 1px solid #2288ff;
+    border: 1px solid rgb(23, 194, 190);
     background-color: white;
     border-radius: 5px;
     display: flex;
@@ -219,7 +219,23 @@ button:hover {
     text-decoration: underline;
 }
 
-
+@media (min-width: 1900px) {
+    .container {
+        width: 33% !important;  
+    }
+}
+@media (min-width: 1700px) {
+    .container {
+        width: 38% !important;
+  
+    }
+}
+@media (min-width: 1366px) {
+    .container {
+        width: 46%;
+        height: 50%;
+    }
+}
 
 @media (max-width: 900px) {
     .container {
@@ -232,8 +248,7 @@ button:hover {
 @media (max-width: 768px) {
     .container { 
         width: 74%; 
-        /* height: auto;
-        padding: 10px 10px 80px 10px; */
+       
     }
 }
 

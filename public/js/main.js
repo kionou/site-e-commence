@@ -57,12 +57,21 @@ $('.content-slick').slick({
 
 
 
-$('.container-cadre').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 6000,
-  infinite:true
+// $('.container-cadre').slick({
+//   slidesToShow: 2,
+//   slidesToScroll: 2,
+//   autoplay: true,
+//   autoplaySpeed: 6000,
+//   infinite:true
+// });
+
+
+$(document).ready(function() {
+  $('#autoWidth').lightSlider({
+      autoWidth:true,
+      loop:true,
+      onSliderLoad: function() {
+          $('#autoWidth').removeClass('cS-hidden');
+      } 
+  });  
 });
-
-
