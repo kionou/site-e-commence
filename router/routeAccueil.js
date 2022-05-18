@@ -5,6 +5,9 @@ const router = express.Router()
 
 router.get('/',controlleur.Accueil);
 router.get('/detail',controlleur.Detail)
+router.get('/connexion',controlleur.Authentification)
+router.get('/inscription',controlleur.Registre)
+router.get('/cathegorie',controlleur.Cathegorie)
 
 
 

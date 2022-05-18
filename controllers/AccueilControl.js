@@ -11,6 +11,19 @@ const controlleur = class{
         res.render('detail')
 
     }
+ 
+    static Authentification = (req=request,res=response)=>{
+        res.render('connexion')
+
+    }
+
+     static Registre = (req=request,res=response)=>{
+        res.render('inscription')
+    }
+
+     static Cathegorie = (req=request,res=response)=>{
+        res.render('cathegorie')
+    }
 }
 
 

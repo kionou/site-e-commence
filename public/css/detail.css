@@ -14,7 +14,7 @@ body{
 header{
     width: 100%;
     height: 100px;
-    border: 1px solid red;
+    background-color: rgb(23, 194, 190);
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -25,7 +25,7 @@ header{
 .heade{
     width: 80%;
     height: 100%;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,9 +33,12 @@ header{
 
 .logo{
     margin-left: 8px;
+
 }
-.logo p{
+.logo a {
     font-size: 25px;
+    text-decoration: none;
+    color: #fff;
 }
 
 .heade nav ul{
@@ -50,12 +53,13 @@ header{
     text-decoration: none;
     font-size: 25px;
     display: block;
+    color: #fff;
 }
 
 .icon{
     font-size: 28px;
     margin-right: 10px;
-    color: blue;
+    color: #fff;
     display: none;
 
 }
@@ -64,7 +68,13 @@ header{
     height: 2.5rem;
     padding: 5px;
     display: none;
+    border-radius: 5px;
+    border: none;
+    font-family:cursive;
+    font-size: 16px;
 }
+
+
 
 .inputsearch:focus{
     outline: none;
@@ -81,7 +91,7 @@ header{
 .container{
     width: 100%;
     height: auto;
-    border: 1px solid red ;
+    /* border: 1px solid red ; */
     margin-top: 30px;
     display: flex;
     flex-direction: column;
@@ -94,7 +104,7 @@ header{
 .detail{
     width: 70%;
     height: 600px;
-    border: 1px solid blue ;
+    /* border: 1px solid blue ; */
     padding: 30px;
     display: flex;
     background-color: #fff;
@@ -107,7 +117,7 @@ header{
 .detail-image{
     width: 40%;
     height: 100%;
-    border: 1px solid rgb(0, 255, 128) ;
+    /* border: 1px solid rgb(0, 255, 128) ; */
    
 
 }
@@ -115,12 +125,14 @@ header{
 .detail-image img{
     width: 100%;
     height: 100%;
+    vertical-align: middle;
+    border-radius: 5px;
 }
 
 .detail-content{
     width: 60%;
     height: 100%;
-    border: 1px solid rgb(188, 15, 142) ;
+    /* border: 1px solid rgb(188, 15, 142) ; */
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -129,16 +141,21 @@ header{
 
 }
 
+.detail-content span{
+    font-family: cursive;
+}
+
 .prix{
     width: 100%;
     height: 200px;
-    border: 1px solid black;
+    border: 1px solid rgb(23, 194, 190);
     display: flex;
     align-items: center;
     flex-direction: column;
-    font-size: 16px !important;
+    font-size: 20px !important;
     padding: 10px;
     margin-top: 70px;
+    border-radius: 5px;
 }
 
 .quantite{
@@ -208,7 +225,7 @@ header{
 .description{
     width: 70%;
     height: 500px;
-    border: 1px solid blue ;
+    /* border: 1px solid blue ; */
     /* padding: 30px; */
     display: flex;
     flex-direction: column;
@@ -222,7 +239,7 @@ header{
 .trait_dessus
 {
     margin-top: 10px;
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid rgb(23, 194, 190);
     width : 100%;
 }
 
@@ -237,7 +254,7 @@ header{
 .liste-content{
     width: 100%;
     height: auto;
-    border: 1px solid #e5e5e5;
+    border: 1px solid rgb(23, 194, 190);
     display: flex;
     font-size: 22px;
 }
@@ -245,7 +262,7 @@ header{
     width: 50%;
     height: 100%; 
     padding: 10px;
-    border-right: 1px solid #e5e5e5;
+    border-right: 1px solid rgb(23, 194, 190);
 }
 
 .liste-right{
@@ -275,5 +292,112 @@ header{
 
 
 @media (max-width :1160px){
+
+    .detail-content{
+        font-size: 20px;
+        padding: 26px;
+    }
+
+    .ajouter{
+        width: 16rem;
+    }
+
+    .description{
+        height: 600px;
+    }
+    .liste-left{
+        border-right: none;
+    }
+
+    .liste-right {
+       
+        border-left: 1px solid rgb(23, 194, 190);
+    }
+}
+
+@media (max-width :950px) {
+
+    .detail{
+        width: 86%;
+    }
+
+    .description {
+        height: 630px;
+     width: 86%;
+    }
+}
+
+@media (max-width :768px) {
+
+    .detail {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .detail-image{
+        width: 100%;
+    }
+
+    .detail-content{
+        width: 100%;
+    }
+
+    .prix{
+        font-size: 16px !important;
+    }
+
+  
+}
+
+
+@media (max-width :752px) {
+
+    .description {
+        height: 630px;
+        width: 100%;
+    }
+}
+
+@media (max-width :656px) {
+
+    .liste-content{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .description {
+        height: auto;
+        width: 100%;
+    }
+
+    .liste-right {
+    
+        border-left: none;
+    }
+
+    #texte{
+        text-align: center;
+    }
+}
+
+
+@media (max-width :463px) {
+
+    .detail-content {
+        font-size: 17px;
+    }
+
+    .prix{
+        margin-top: 23px;
+        height: 174px;
+        border: none;
+    }
+
+   .ajouter{
+       width: 12rem;
+       font-size: 16px;
+   }
+
 
 }
