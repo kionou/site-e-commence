@@ -24,6 +24,10 @@ const controlleur = class{
      static Cathegorie = (req=request,res=response)=>{
         res.render('cathegorie')
     }
+
+    static Panier = (req=request,res=response)=>{
+        res.render('panier')
+    }
 }
 
 
