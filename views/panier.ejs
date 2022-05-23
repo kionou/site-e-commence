@@ -40,7 +40,7 @@
                             <div class="nomBien">
                                 <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
                                 <div class="supp">
-                                    <button class=""><i class="fas fa-trash"></i> supprimer</button>
+                                    <button id="open" class=""><i class="fas fa-trash"></i> supprimer</button>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                             <p>100.000 F CFA</p>
                             <div class="quantite">
                                 <button id="decrement" onclick=""> - </button>
-                                <input type="number" min="0" max="100" step="5" value="2" id="my-input" readonly>
+                                <input type="number" min="0" max="100" step="5" value="1" id="my-input" readonly>
                                 <button id="increment" onclick=""> + </button>
                             </div>
                         </div>
@@ -145,13 +145,22 @@
                     </div>
                 </div>
             </div>
-      </div>
-          
-      
+      </div> 
+    </div>
+    <div class="modal-container" id="modal">
+        <div class="modal">
+            <!-- <i class="fas fa-heart"></i> -->
+            <p>Voulez-vous vraiment supprimer cet article du panier?</p>
+            <div class="boutton">
+                <button class="btnredirect" onclick="non()">Non</button>
+                <button  onclick="supp('id')" class="btnredirect" >Oui</button>
+    
+            </div>
+            <i id="closer" class="fas fa-times"></i>
+        </div>
     </div>
 
-
     <script src="https://kit.fontawesome.com/0eca8d30fc.js" crossorigin="anonymous"></script>
-    <script src="/js/detail.js"></script>
+    <script src="/js/panier.js"></script>
 </body>
 </html>

@@ -50,16 +50,16 @@
                         <div class="adresse-body">
 
                             <div class="form-control">
-                                <label for="non"> nom</label>
-                                <input type="text" name="" id="">
+                                <label for="ville"> Ville</label>
+                                <input type="text" name="ville" id="">
                             </div>
                             <div class="form-control">
-                                <label for="non"> nom</label>
-                                <input type="text" name="" id="">
+                                <label for="commune"> Commune</label>
+                                <input type="text" name="commune" id="">
                             </div>
                             <div class="form-control">
-                                <label for="non"> nom</label>
-                                <input type="text" name="" id="">
+                                <label for="numero"> Numero</label>
+                                <input type="number" name="numero" id="">
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                         <div class="livraison-content">
                            <div class="livraison-contente">
                                 <div>
-                                    <input type="radio">
+                                    <input type="radio" name="livraison" value="boutique">
                                     <label for="">Point de relais</label>
                                 </div>
                                 <div>
@@ -83,7 +83,7 @@
                            </div>
                             <div class="livraison-contente">
                                 <div>
-                                    <input type="radio">
+                                    <input type="radio" name="livraison" value="abidjan">
                                     <label for="">Livraison Abidjan</label>
                                 </div>
                                 <div>
@@ -101,14 +101,18 @@
                         </div>
                     <div class="trait_dessus"></div>
                     <div class="form">
-                        <input type="radio">
+                        <input type="radio" name="paiement" value="cash">
                         <label for="">Payer cash à la livraison</label>
                     </div>
                     <div class="form">
-                        <input type="radio">
+                        <input type="radio" name="paiement" value="money">
                         <label for="">Payer avec Mobile Money</label>
                     </div>
                     </div>
+                    <div class="boutton">
+                    <button  class="ajouter"><a href="#">VALIDER LA COMMANDE</a></button>
+                    </div>
+
                 </form>
                
             </div>
@@ -116,38 +120,41 @@
                 <div class="text">
                     <p>RÉSUMÉ</p>
                 </div>
-                <div class="facture">
-                    <div class="titre">
-                        <p>VOTRE COMMANDE</p>
-                    </div>
-                    <div class="trait_dessus"></div>
-                    <div class="article">
-                        <div class="article-content">
-                            <p>2 articles</p>
-                            <span>0 F CFA</span>
+                <div class="factures-content">
+                    <div class="facture">
+                        <div class="titre">
+                            <p>VOTRE COMMANDE</p>
                         </div>
-                        <div class="article-content">
-                            <p>Sous-total</p>
-                            <span>100.000 F CFA</span>
+                        <div class="trait_dessus"></div>
+                        <div class="article">
+                            <div class="article-content">
+                                <p>2 articles</p>
+                                <span>0 F CFA</span>
+                            </div>
+                            <div class="article-content">
+                                <p>Sous-total</p>
+                                <span>100.000 F CFA</span>
+                            </div>
+                            <div class="article-content">
+                                <p>Livraison</p>
+                                <span>1.500 F CFA</span>
+                            </div>
+                           
                         </div>
-                        <div class="article-content">
-                            <p>Livraison</p>
-                            <span>1.500 F CFA</span>
-                        </div>
-                       
-                    </div>
-                    <div class="trait_dessus"></div>
-                    <div class="total">
-                        <div class="total1">
-                            <p>Total (HT)</p>
-                            <span>0 F CFA</span>
-                        </div>
-                        <div class="total1">
-                            <p>Taxes</p>
-                            <span>0 F CFA</span>
+                        <div class="trait_dessus"></div>
+                        <div class="total">
+                            <div class="total1">
+                                <p>Total (HT)</p>
+                                <span>0 F CFA</span>
+                            </div>
+                            <div class="total1">
+                                <p>Taxes</p>
+                                <span>0 F CFA</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+               
             </div>
         </div>
     </div>

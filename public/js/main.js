@@ -6,7 +6,6 @@
 // })
 
 
-
 $('.content-slick').slick({
     dots: true,
     infinite: true,
@@ -17,8 +16,6 @@ $('.content-slick').slick({
   });
 
  
-
-
 
   new Glider(document.querySelector('.glider'), {
     slidesToScroll: 1,
@@ -77,4 +74,17 @@ $('.content-slick').slick({
       },
     ]
   });
+
+  let icon = document.querySelector('.search');
+let input = document.querySelector('.inputsearch')
+
+icon.addEventListener('click',(e)=>{
+  e.preventDefault();
+  icon.style.display='none'
+  input.style.display='block'
+})
+
+
+
+
 

@@ -120,6 +120,7 @@ flex-direction: column;
     background-color: #fff;
     margin-bottom: 10px;
     border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%);
 }
 
 .user-header {
@@ -142,6 +143,7 @@ flex-direction: column;
     height: auto;
     background-color: #fff;
     border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%);
 }
 
 .adresse-body{
@@ -156,7 +158,8 @@ flex-direction: column;
     font-size: 17px;
 }
 .form-control label{
-    width: 100%;
+    width: 100px;
+    display: inline-block;
     padding: 2px 20px 2px 2px;
 }
 .form-control input{
@@ -166,6 +169,7 @@ flex-direction: column;
     border: 1px solid black;
     padding: 5px;
     font-family: cursive;
+    font-size: 17px;
 }
 .form-control input:focus{
     outline: none;
@@ -178,6 +182,7 @@ flex-direction: column;
     margin-top: 10px;
     background-color: #fff;
     border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%);
 }
 .livraison-content{
     width: 100%;
@@ -203,10 +208,42 @@ flex-direction: column;
     margin-top: 10px;
     background-color: #fff;
     border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%);
 }
 .form{
     width: 100%;
     padding: 10px;
+}
+.boutton{
+    width: 100%;
+    padding-top: 15px;
+   text-align: center;
+}
+.ajouter{
+    width: 21rem;
+    height: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+    border: none;
+    background-color: rgb(23, 194, 190);
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Kaushan Script', cursive;
+} 
+.ajouter a{
+    color: white;
+    text-decoration: none;
+}
+
+.ajouter:hover {
+    background-color: white;
+    border: 1px solid rgb(23, 194, 190);
+    cursor: pointer;
+}
+
+.ajouter:hover a {
+    background-color: white;
+    color: rgb(23, 194, 190);   
 }
 
 /* info-user fin */
@@ -215,16 +252,21 @@ flex-direction: column;
     .factures {
         width: 37%;
         height: 80vh;
-        border-radius: 5px;
         position: sticky;
         top: 0;
+    }
+    .factures-content{
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%);
     }
     .facture {
         height: auto;
         border: 1px solid rgb(23, 194, 190);
         border-radius: 5px;
-        background-color: #fff;
-        border-radius: 5px;
+      
     }
     
     .article {
