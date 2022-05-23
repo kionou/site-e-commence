@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,116 +18,136 @@
                     <li><input class="inputsearch" type="text" name="search" placeholder="Recherchez"></li>
                     <li><a class="search" href="#"><i class="fas fa-search"></i></a></li>
                     <li><a href="/connexion"><i class="fas fa-user"></i></a></li>
-                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="/panier"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <div class="container">
-        <div class="container-content">
-            <div class="panier">
-                <div class="text"><p>Panier <span>(5)</span></p></div>
-                <div class="trait_dessus"></div>
-                <div class="panier-content">
-                    <div class="detail">
-                        <div class="image">
-                            <img src="/images/4.webp" alt="">
+      <div class="container-contente">
+            <div class="container-content">
+                <div class="panier">
+                    <div class="text">
+                        <p>Panier <span>(5)</span></p>
+                    </div>
+                    <!-- <div class="trait_dessus"></div> -->
+                    <div class="panier-content">
+                        <div class="detail">
+                            <div class="image">
+                                <img src="/images/4.webp" alt="">
+                            </div>
+                            <div class="nomBien">
+                                <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
+                                <div class="supp">
+                                    <button class=""><i class="fas fa-trash"></i> supprimer</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="nomBien">
-                            <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
-                            <div class="supp">
-                                <button  class="" ><i class="fas fa-trash"></i> supprimer</button>
+                        <div class="prix">
+                            <p>100.000 F CFA</p>
+                            <div class="quantite">
+                                <button id="decrement" onclick=""> - </button>
+                                <input type="number" min="0" max="100" step="5" value="2" id="my-input" readonly>
+                                <button id="increment" onclick=""> + </button>
                             </div>
                         </div>
                     </div>
-                    <div class="prix">
-                        <p>100.000 F CFA</p>
-                        <div class="quantite">
-                            <button id="decrement" onclick=""> - </button>
-                            <input type="number" min="0" max="100"  step="5" value="2" id="my-input" readonly>
-                            <button id="increment" onclick=""> + </button>
+                    <!-- <div class="panier-content">
+                                <div class="detail">
+                                    <div class="image">
+                                        <img src="/images/4.webp" alt="">
+                                    </div>
+                                    <div class="nomBien">
+                                        <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
+                                        <div class="supp">
+                                            <button  class="" ><i class="fas fa-trash"></i> supprimer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="prix">
+                                    <p>100.000 F CFA</p>
+                                    <div class="quantite">
+                                        <button id="decrement" onclick=""> - </button>
+                                        <input type="number" min="0" max="100"  step="5" value="2" id="my-input" readonly>
+                                        <button id="increment" onclick=""> + </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panier-content">
+                                <div class="detail">
+                                    <div class="image">
+                                        <img src="/images/4.webp" alt="">
+                                    </div>
+                                    <div class="nomBien">
+                                        <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
+                                        <div class="supp">
+                                            <button  class="" ><i class="fas fa-trash"></i> supprimer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="prix">
+                                    <p>100.000 F CFA</p>
+                                    <div class="quantite">
+                                        <button id="decrement" onclick=""> - </button>
+                                        <input type="number" min="0" max="100"  step="5" value="2" id="my-input" readonly>
+                                        <button id="increment" onclick=""> + </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panier-content">
+                                <div class="detail">
+                                    <div class="image">
+                                        <img src="/images/4.webp" alt="">
+                                    </div>
+                                    <div class="nomBien">
+                                        <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
+                                        <div class="supp">
+                                            <button  class="" ><i class="fas fa-trash"></i> supprimer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="prix">
+                                    <p>100.000 F CFA</p>
+                                    <div class="quantite">
+                                        <button id="decrement" onclick=""> - </button>
+                                        <input type="number" min="0" max="100"  step="5" value="2" id="my-input" readonly>
+                                        <button id="increment" onclick=""> + </button>
+                                    </div>
+                                </div>
+                            </div> -->
+                </div>
+                <div class="factures">
+                    <div class="facture">
+                        <div class="titre">
+                            <p>RESUMER DU PANIER</p>
+                        </div>
+                        <div class="trait_dessus"></div>
+                        <div class="article">
+                            <p>2 articles</p>
+                            <span>0 F CFA</span>
+                        </div>
+                        <div class="trait_dessus"></div>
+                        <div class="total">
+                            <div class="total1">
+                                <p>Total (HT)</p>
+                                <span>0 F CFA</span>
+                            </div>
+                            <div class="total1">
+                                <p>Taxes</p>
+                                <span>0 F CFA</span>
+                            </div>
+                        </div>
+                        <div class="trait_dessus"></div>
+                        <div class="cmd">
+                            <a href="/commande">Commander</a>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="panier-content">
-                    <div class="detail">
-                        <div class="image">
-                            <img src="/images/4.webp" alt="">
-                        </div>
-                        <div class="nomBien">
-                            <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
-                            <div class="supp">
-                                <button  class="" ><i class="fas fa-trash"></i> supprimer</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="prix">
-                        <p>100.000 F CFA</p>
-                        <div class="quantite">
-                            <button id="decrement" onclick=""> - </button>
-                            <input type="number" min="0" max="100"  step="5" value="2" id="my-input" readonly>
-                            <button id="increment" onclick=""> + </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="panier-content">
-                    <div class="detail">
-                        <div class="image">
-                            <img src="/images/4.webp" alt="">
-                        </div>
-                        <div class="nomBien">
-                            <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
-                            <div class="supp">
-                                <button  class="" ><i class="fas fa-trash"></i> supprimer</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="prix">
-                        <p>100.000 F CFA</p>
-                        <div class="quantite">
-                            <button id="decrement" onclick=""> - </button>
-                            <input type="number" min="0" max="100"  step="5" value="2" id="my-input" readonly>
-                            <button id="increment" onclick=""> + </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="panier-content">
-                    <div class="detail">
-                        <div class="image">
-                            <img src="/images/4.webp" alt="">
-                        </div>
-                        <div class="nomBien">
-                            <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
-                            <div class="supp">
-                                <button  class="" ><i class="fas fa-trash"></i> supprimer</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="prix">
-                        <p>100.000 F CFA</p>
-                        <div class="quantite">
-                            <button id="decrement" onclick=""> - </button>
-                            <input type="number" min="0" max="100"  step="5" value="2" id="my-input" readonly>
-                            <button id="increment" onclick=""> + </button>
-                        </div>
-                    </div>
-                </div> -->
             </div>
-           
-           
-            <div class="facture">
-                <div class="article">
-                    <p>2 articles</p>
-                    <p>22.000 F CFA</p>
-                </div>
-                <div class="total">
-                    <p>2 articles</p>
-                    <p>22.000 F CFA</p>
-                </div>
-                <button>Commander</button>
-            </div>
-        </div>
+      </div>
+          
+      
     </div>
 
 

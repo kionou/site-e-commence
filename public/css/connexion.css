@@ -20,21 +20,18 @@ header {
     justify-content: center;
     overflow: hidden;
     align-items: center;
-    /* margin-bottom: 60px; */
 }
 
 .heade {
     width: 80%;
     height: 100%;
-    /* border: 1px solid blue; */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    margin-left: 8px;
-   
+    margin-left: 8px;  
 }
 
 .logo a {
@@ -87,9 +84,7 @@ header {
 
 /* header fin */
 
-
 .ImageHeader {
-    /* border: 1px solid red; */
     height: 100vh;
     width: 100%;
     text-align: center;
@@ -173,7 +168,6 @@ input:focus~label {
 .mot-passe{
     text-align: right;
     width: 30rem;
- 
 }
 
 .mot-passe a {
@@ -194,8 +188,7 @@ button {
     color: white;
     border-radius: 5px;
     font-size: 23px;
-    font-family: 'Kaushan Script',
-        cursive;
+    font-family: 'Kaushan Script',    cursive;
 }
 
 button:hover {
@@ -213,7 +206,6 @@ button:hover {
     text-decoration: none;
     color: rgb(23, 194, 190);
 }
-
 
 .texte:hover a{
     text-decoration: underline;
@@ -233,7 +225,7 @@ button:hover {
 @media (min-width: 1366px) {
     .container {
         width: 46%;
-        height: 50%;
+        height: auto;
     }
 }
 
@@ -242,13 +234,10 @@ button:hover {
 
         width: 66%;
     }
-
-
 }
 @media (max-width: 768px) {
     .container { 
-        width: 74%; 
-       
+        width: 74%;   
     }
 }
 
@@ -290,8 +279,6 @@ button:hover {
 @media (max-width: 418px) {
     .container {
         width: 88%;
-        /* height: auto; */
-
     }
 }
 

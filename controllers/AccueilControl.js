@@ -28,6 +28,10 @@ const controlleur = class{
     static Panier = (req=request,res=response)=>{
         res.render('panier')
     }
+
+     static Commande = (req=request,res=response)=>{
+        res.render('commande')
+    }
 }
 
 

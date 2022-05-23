@@ -9,6 +9,7 @@ router.get('/connexion',controlleur.Authentification)
 router.get('/inscription',controlleur.Registre)
 router.get('/cathegorie',controlleur.Cathegorie)
 router.get('/panier',controlleur.Panier)
+router.get('/commande',controlleur.Commande)
 
 
 

@@ -25,7 +25,6 @@ header{
 .heade{
     width: 80%;
     height: 100%;
-    /* border: 1px solid blue; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,7 +60,6 @@ header{
     margin-right: 10px;
     color: #fff;
     display: none;
-
 }
 .inputsearch{
     width: 357px;
@@ -73,8 +71,6 @@ header{
     font-family:cursive;
     font-size: 16px;
 }
-
-
 
 .inputsearch:focus{
     outline: none;
@@ -91,7 +87,6 @@ header{
 .container{
     width: 100%;
     height: auto;
-    /* border: 1px solid red ; */
     margin-top: 30px;
     display: flex;
     flex-direction: column;
@@ -104,22 +99,17 @@ header{
 .detail{
     width: 70%;
     height: 600px;
-    /* border: 1px solid blue ; */
     padding: 30px;
     display: flex;
     background-color: #fff;
     box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
     border-radius: 5px;
     margin-bottom: 30px;
-
 }
 
 .detail-image{
     width: 40%;
     height: 100%;
-    /* border: 1px solid rgb(0, 255, 128) ; */
-   
-
 }
 
 .detail-image img{
@@ -132,7 +122,6 @@ header{
 .detail-content{
     width: 60%;
     height: 100%;
-    /* border: 1px solid rgb(188, 15, 142) ; */
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -207,17 +196,25 @@ header{
     text-align: center;
     border: none;
     background-color: rgb(23, 194, 190);
-    color: white;
     border-radius: 5px;
     font-size: 20px;
     font-family: 'Kaushan Script', cursive;
+} 
+.ajouter a{
+    color: white;
+    text-decoration: none;
 }
 
-.ajouter:hover{
+.ajouter:hover {
     background-color: white;
-    color: rgb(23, 194, 190);
     border: 1px solid rgb(23, 194, 190);
     cursor: pointer;
+}
+
+.ajouter:hover a {
+    background-color: white;
+    color: rgb(23, 194, 190);
+   
 }
 /* detail fin */
 
@@ -225,8 +222,6 @@ header{
 .description{
     width: 70%;
     height: 500px;
-    /* border: 1px solid blue ; */
-    /* padding: 30px; */
     display: flex;
     flex-direction: column;
     margin-top: 30px;
@@ -236,8 +231,7 @@ header{
 
 }
 
-.trait_dessus
-{
+.trait_dessus{
     margin-top: 10px;
     border-top: 1px solid rgb(23, 194, 190);
     width : 100%;
@@ -246,10 +240,7 @@ header{
 .liste{
     width: 100%;
     height: auto;
-    /* border: 1px solid rgb(10, 153, 98) ; */
     padding: 18px;
-   
-
 }
 .liste-content{
     width: 100%;
@@ -285,11 +276,9 @@ header{
     margin-left: 18px;
 }
 
-
 /* descriptiuon fin */
 
 /* container fin */
-
 
 @media (max-width :1160px){
 
@@ -345,11 +334,8 @@ header{
 
     .prix{
         font-size: 16px !important;
-    }
-
-  
+    } 
 }
-
 
 @media (max-width :752px) {
 
@@ -381,7 +367,6 @@ header{
     }
 }
 
-
 @media (max-width :463px) {
 
     .detail-content {
@@ -398,6 +383,5 @@ header{
        width: 12rem;
        font-size: 16px;
    }
-
 
 }
