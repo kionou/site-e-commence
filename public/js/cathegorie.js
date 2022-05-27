@@ -66,3 +66,16 @@ let index=1;
      showItems();
      check();
  }
+
+let texte = document.querySelectorAll('#text')
+console.log(texte);
+texte.forEach(text =>{
+  truncateString(text.innerHTML,30,text)
+});
+function truncateString(str,num,el) {
+  if (str.length <= num) {
+    return el.innerHTML =str;
+  } else {
+    return el.innerHTML = str.slice(0,num).concat('...')
+  }
+}

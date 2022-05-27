@@ -27,8 +27,8 @@ icon.addEventListener('click',(e)=>{
 })
 
 
-function non(){
-    location.href = "/panier"
+function non(id){
+    location.href = "/panier/" + id
 }
 
 function supp(id) {  

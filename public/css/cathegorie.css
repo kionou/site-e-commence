@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Kaushan+Script&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@1,200&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Kaushan Script', cursive;
+    font-family: 'Roboto Serif', serif;
     background-color: #f5f5f5;   
 }
 
@@ -20,6 +20,7 @@ header {
     justify-content: center;
     overflow: hidden;
     align-items: center;
+    font-family: 'Kaushan Script', cursive;
 }
 
 .heade {
@@ -70,7 +71,7 @@ header {
     display: none;
     border-radius: 5px;
     border: none;
-    font-family: cursive;
+    font-family: 'Roboto Serif', serif;
     font-size: 16px;
 }
 
@@ -113,9 +114,13 @@ header {
     padding: 10px;
     font-size: 23px;
 }
+.header-content p {
+    font-weight: bolder;
+}
 
 .header-content p span{
-    font-family: cursive;    
+    font-family: 'Roboto Serif', serif;
+    font-weight: 100;
 }
 
 .trait_dessus{
@@ -128,8 +133,12 @@ header {
     padding: 10px;
     font-size: 23px;
 }
+.result p  {
+    font-weight: bolder;
+}
 .result p span{
-    font-family: cursive;  
+    font-family: 'Roboto Serif', serif;
+    font-weight: 100;
 }
 /* cathegorie-header fin */
 
@@ -182,7 +191,7 @@ header {
     align-items: center;
 }
 .card-body p{
-    font-family: cursive;
+    font-family: 'Roboto Serif', serif;
     font-size: 18px;
 }
 .card-body a{
@@ -226,6 +235,14 @@ header {
     	opacity:1;
     	transform: scale(1);
     }
+}
+.noresult{
+    width: 220px;
+    border: 1px solid rgb(23, 194, 190);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    background-color: hsl(240deg 7% 97%);
 }
 .pagination{
     display: flex;

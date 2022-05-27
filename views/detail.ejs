@@ -24,65 +24,67 @@
         </div>
     </header>
     <div class="container">
-        <div class="detail">
-            <div class="detail-image">
-                <img src="/images/7.webp" alt="">
-            </div>
-            <div class="detail-content">
-                <p> <span>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</span> </p>
-                <p>Marque :  <span>Apple</span> </p>
-                <p>Référence :  <span>IPhone 6 </span> </p>
-                <div class="prix">
-                    <p>100.000 F CFA</p>
-                    <div class="quantite">
-                        <button id="decrement" onclick=""> - </button>
-                        <input type="number" min="0" max="100"  step="5" value="1" id="my-input" readonly>
-                        <button id="increment" onclick=""> + </button>
+         <% success.forEach(function(article){ %>
+            <div class="detail">
+                <div class="detail-image">
+                    <img src="<%= article.image %>" alt="">
+                </div>
+                <div class="detail-content">
+                    <p> <span><%= article.nom %> <%= article.model %> - <%= article.ecran %> -<%= article.reseau %> - <%= article.rom %> - <%= article.ram %></span> </p>
+                    <p>Marque :  <span><%= article.nom %></span> </p>
+                    <p>Référence :  <span><%= article.model %> </span> </p>
+                    <div class="prix">
+                        <p> <span><%= article.prix %></span> F CFA</p>
+                        <div class="quantite">
+                            <button id="decrement" onclick=""> - </button>
+                            <input type="number" min="0" max="100"  step="5" value="1" id="my-input" readonly>
+                            <button id="increment" onclick=""> + </button>
+                        </div>
+                        
+                    
+                        <button  class="ajouter"><a href="/panier/<%= article.id %>">AJOUTER AU PANIER</a></button>
                     </div>
-                      
-                  
-                    <button  class="ajouter"><a href="/panier">AJOUTER AU PANIER</a></button>
                 </div>
             </div>
-        </div>
 
-        <div class="description">
-          <div id="texte">
-            <p>Description</p>
-          </div>
-            <div class="trait_dessus"></div>
-            <div class="liste">
-               <div class="liste-content">
-                <div class="liste-left">
-                   <ul>
-                    <li>Type de produit : <span>Smartphone</span> </li>
-                    <li>Modèle : <span>P30 lite New Edition</span></li>
-                    <li>Réseau <span>4G/LTE</span></li>
-                    <li>Dual SIM : Oui</li>
-                    <li>Écran : 6,15 pouces</li>
-                    <li>Résolution : 1080 x 2312 pixels</li>
-                    <li>Processeur : Octa-core (4x2.2 GHz Cortex-A73 & 4x1.7 GHz Cortex-A53)</li>
-                    <li>Mémoire RAM :6 Go</li>
-                   </ul>
-                </div>
-                <div class="liste-right">
+            <div class="description">
+            <div id="texte">
+                <p>Description</p>
+            </div>
+                <div class="trait_dessus"></div>
+                <div class="liste">
+                <div class="liste-content">
+                    <div class="liste-left">
                     <ul>
-                        <li>Mémoire ROM : 256 Go (jusqu'à 512Go)</li>
-                        <li>Camera arrière : 48 + 8 + 2 Mégapixels</li>
-                        <li>Camera avant : 24 Mégapixels</li>
-                        <li>Système d'exploitation : Android 9.0 (Pie), EMUI 9.0</li>
-                        <li>Connectivités : WIFI - Bluetooth - NFC - GPS</li>
-                        <li>Batterie : 3340 mAh</li>
-                        <li>Dimensions : 152.9 x 72.7 x 7.4 mm</li>
-                        <li>Poids : 159g
-
-                        </li>
+                        <li>Type de produit : <span><%= article.type_bien %></span> </li>
+                        <li>Modèle : <span><%= article.model %></span></li>
+                        <li>Réseau <span><%= article.reseau %></span></li>
+                        <li>Dual SIM : <span><%= article.dual_sim %></span> </li>
+                        <li>Écran :<span><%= article.ecran %></span> </li>
+                        <li>Résolution :<span><%= article.resolution %></span> </li>
+                        <li>Processeur :<span><%= article. processeur %></span> </li>
+                        <li>Mémoire RAM :<span><%= article.ram %></span></li>
                     </ul>
+                    </div>
+                    <div class="trait_horizontal"></div>
+                    <div class="liste-right">
+                        <ul>
+                            <li>Mémoire ROM :<span><%= article. rom %></span> </li>
+                            <li>Camera arrière : <span><%= article. camera_arriere %></span> </li>
+                            <li>Camera avant :<span><%= article. camera_avant %></span> </li>
+                            <li>Système d'exploitation :<span><%= article. systeme_exploitation %></span> </li>
+                            <li>Connectivités : <span><%= article. connectivite %></span></li>
+                            <li>Batterie : <span><%= article. batterie %></span></li>
+                            <li>Dimensions :<span><%= article. dimension %></span> </li>
+                            <li>Poids :<span><%= article. poids %></span> </li>
+                        </ul>
+                    </div>
                 </div>
-               </div>
+                </div>
             </div>
-        </div>
+         <% }); %>
     </div>
+   
 
     <script  src="https://kit.fontawesome.com/0eca8d30fc.js" crossorigin="anonymous"></script>
     <script src="/js/detail.js"></script>

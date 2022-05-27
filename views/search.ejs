@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/cathegorie.css">
-    <title>Cathegorie</title>
+    <title>Recherche</title>
 </head>
+
 <body>
     <header>
         <div class="heade">
@@ -28,46 +30,56 @@
         <div class="cathegorie">
             <div class="cathegorie-header">
                 <div class="header-content">
-                    <% if (liste == ''){ %>
-                    <p>Boutique :<span>Pas encore disponible</span></p>
-                    <% } else if (liste[0].nom){ %>
-                    <p>Boutique <span><%= liste[0].nom %></span></p>
-                      <% } %>
+                    <% if (liste=='' ){ %>
+                        <p>Boutique :<span>Pas encore disponible</span></p>
+                        <% } else if (liste[0].nom){ %>
+                            <p>Boutique <span>
+                                    <%= liste[0].nom %>
+                                </span></p>
+                            <% } %>
                 </div>
                 <div class="trait_dessus"></div>
                 <div class="result">
-                   <% if (nombre ) { %>
-                    <p>Résultats : <span><%= nombre.articleCount %></span></p>
-                   <% } %>
+                    <% if (nombre ) { %>
+                        <p>Résultats : <span>
+                                <%= nombre.articleCount %>
+                            </span></p>
+                        <% } %>
                 </div>
                 <div class="trait_dessus"></div>
 
             </div>
             <div class="cathegorie-content">
-             
-                  <% if (liste =='') { %>
-                      <div class="noresult">
+
+                <% if (liste=='' ) { %>
+                    <div class="noresult">
                         <p>Aucun resultat trouvé(s) !</p>
-                      </div>
-                  <% } else if (liste ){%>
-                     <% liste.forEach(function(article){ %>
-                        <div class="content-card">
-                          <div class="card-image">
-                            <a href="/detail/<%= article.id %>">
-                              <img src="<%= article.image %>" alt="">
-                            </a>
-                          </div>
-                          <div class="card-body">
-                            <p id="text"> <%= article.nom %> <%= article.model %> - <%= article.ecran %>" -<%= article.reseau %> - <%= article.rom %> - <%= article.ram %></p>
-                            <p><%= article.prix %> F CFA </p>
-                            <a href="/detail/<%= article.id %>" class="btndetail">Détail</a>
-                          </div>
-                        </div>
-                     <% }); %>
-                  <% } %>
-                         
-                               
-                <!-- <div class="content-card">
+                    </div>
+                    <% } else if (liste ){%>
+                        <% liste.forEach(function(article){ %>
+                            <div class="content-card">
+                                <div class="card-image">
+                                    <a href="/detail/<%= article.id %>">
+                                        <img src="<%= article.image %>" alt="">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <p>
+                                        <%= article.nom %>
+                                            <%= article.model %> - <%= article.ecran %>" -<%= article.reseau %> - <%=
+                                                            article.rom %> - <%= article.ram %>
+                                    </p>
+                                    <p>
+                                        <%= article.prix %> F CFA
+                                    </p>
+                                    <a href="/detail/<%= article.id %>" class="btndetail">Détail</a>
+                                </div>
+                            </div>
+                            <% }); %>
+                                <% } %>
+
+
+                                    <!-- <div class="content-card">
                     <div class="card-image">
                       <a href="/detail">
                         <img src="/images/3.jpg" alt="">
@@ -166,14 +178,15 @@
             </div>
         </div>
         <div class="pagination">
-          <div class="prev">Prev</div>
-          <div class="page">Page <span class="page-num"></span></div>
-          <div class="next">Next</div>
-      </div>
+            <div class="prev">Prev</div>
+            <div class="page">Page <span class="page-num"></span></div>
+            <div class="next">Next</div>
+        </div>
     </div>
 
     <script src="https://kit.fontawesome.com/0eca8d30fc.js" crossorigin="anonymous"></script>
     <script src="/js/cathegorie.js"></script>
 
 </body>
+
 </html>

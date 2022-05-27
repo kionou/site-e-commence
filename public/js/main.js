@@ -75,14 +75,65 @@ $('.content-slick').slick({
     ]
   });
 
-  let icon = document.querySelector('.search');
-let input = document.querySelector('.inputsearch')
+let texte = document.querySelectorAll('#text')
+console.log(texte);
+texte.forEach(text =>{
+  truncateString(text.innerHTML,30,text)
+});
+function truncateString(str,num,el) {
+  if (str.length <= num) {
+    return el.innerHTML =str;
+  } else {
+    return el.innerHTML = str.slice(0,num).concat('...')
+  }
+}
 
+let icon = document.querySelector('.search');
+let input = document.querySelector('.inputsearch')
+let formulaire= document.querySelector('.formulaire')
 icon.addEventListener('click',(e)=>{
   e.preventDefault();
   icon.style.display='none'
   input.style.display='block'
 })
+// input.addEventListener('input',(e)=>{
+//   e.preventDefault()
+
+//   console.log('rrrrr');
+// console.log(e.target.value);
+
+
+// })
+
+
+// input.addEventListener('input',async (e)=>{
+//   e.preventDefault()
+ 
+
+//   const url = 'http://localhost:8080/search';
+//   let data = new FormData(formulaire)
+//   let dataSerialized = Object.fromEntries(data);
+//   const jsonObject = {...dataSerialized,
+//     sendToSelf : dataSerialized.sendToself ? true : false,
+
+// }
+//   console.log('dataSerialized',jsonObject);
+
+// try {
+//  const response =  await fetch(url, {
+//     method: 'POST',
+//     body: JSON.stringify(jsonObject),
+//     headers: { 
+//        'content-type': 'application/json'
+//     }
+//      });
+//      const json = await response.json()
+//      console.log(json);
+// } catch (e) {
+//     console.log('errr',e);
+// }
+
+// })
 
 
 

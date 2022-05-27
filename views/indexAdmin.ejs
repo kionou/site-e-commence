@@ -27,164 +27,196 @@
         </div>
     </header>
     <div class="container-fluid">
-        <div class="container-content">
-            <div class="container my-5 py-5">
-
-                <!--Section: Design Block-->
-                <section>
-              
-                    <div class="col-md-12 mb-4">
-                      <div class="card mb-4">
-                       
-                        <div class="card-body">
-                          <form>
-                            <div class="row mb-4">
-                              <div class="col">
-                                <div class="form-outline">
-                                  <input type="text" id="form11Example1" class="form-control"  name="type_produit"/>
-                                  <label class="form-label" for="form11Example1">type de produit</label>
-                                </div>
-                              </div>
-                              <div class="col">
-                                <div class="form-outline">
-                                  <input type="text" id="form11Example2" class="form-control" name="nom" />
-                                  <label class="form-label" for="form11Example2">Nom du produit</label>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="row mb-4">
-                                <div class="col">
-                                  <div class="form-outline">
-                                    <input type="text" id="form11Example1" class="form-control" name="cathegorie" />
-                                    <label class="form-label" for="form11Example1">Cathegorie</label>
-                                  </div>
-                                </div>
-                                <div class="col">
-                                  <div class="form-outline">
-                                    <input type="text" id="form11Example2" class="form-control" name="model"/>
-                                    <label class="form-label" for="form11Example2">Model</label>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="row mb-4">
-                                <div class="col">
-                                  <div class="form-outline">
-                                    <input type="text" id="form11Example1" class="form-control" name="reseau"/>
-                                    <label class="form-label" for="form11Example1">Reseau</label>
-                                  </div>
-                                </div>
-                                <div class="col">
-                                  <div class="form-outline">
-                                    <input type="text" id="form11Example2" class="form-control" name="dual_sim" />
-                                    <label class="form-label" for="form11Example2">Dual sim</label>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="row mb-4">
-                                <div class="col">
-                                  <div class="form-outline">
-                                    <input type="text" id="form11Example1" class="form-control"  name="ecran"/>
-                                    <label class="form-label" for="form11Example1">Ecran</label>
-                                  </div>
-                                </div>
-                                <div class="col">
-                                  <div class="form-outline">
-                                    <input type="text" id="form11Example2" class="form-control" name="resolution" />
-                                    <label class="form-label" for="form11Example2">Resolution</label>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="row mb-4">
-                                <div class="col">
-                                  <div class="form-outline">
-                                    <input type="text" id="form11Example1" class="form-control" name="ram"/>
-                                    <label class="form-label" for="form11Example1">Memoire ram</label>
-                                  </div>
-                                </div>
-                                <div class="col">
-                                  <div class="form-outline">
-                                    <input type="text" id="form11Example2" class="form-control" name="rom"/>
-                                    <label class="form-label" for="form11Example2">Memoire rom</label>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="row mb-4">
-                                <div class="col">
-                                  <div class="form-outline">
-                                    <input type="text" id="form11Example1" class="form-control" name="camera_arriere"/>
-                                    <label class="form-label" for="form11Example1">Camera arriere</label>
-                                  </div>
-                                </div>
-                                <div class="col">
-                                  <div class="form-outline">
-                                    <input type="text" id="form11Example2" class="form-control" name="camera_avant"/>
-                                    <label class="form-label" for="form11Example2">Camera avant</label>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="row mb-4">
-                                <div class="col">
-                                  <div class="form-outline">
-                                    <input type="text" id="form11Example1" class="form-control" name="systeme_exploitation"/>
-                                    <label class="form-label" for="form11Example1">Systeme d'exploitation</label>
-                                  </div>
-                                </div>
-                                <div class="col">
-                                  <div class="form-outline">
-                                    <input type="text" id="form11Example2" class="form-control" name="connectivite"/>
-                                    <label class="form-label" for="form11Example2">Connectivite</label>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="row mb-4">
-                                <div class="col">
-                                  <div class="form-outline">
-                                    <input type="text" id="form11Example1" class="form-control" name="batterie"/>
-                                    <label class="form-label" for="form11Example1">Batterie</label>
-                                  </div>
-                                </div>
-                                <div class="col">
-                                  <div class="form-outline">
-                                    <input type="text" id="form11Example2" class="form-control" name="dimension"/>
-                                    <label class="form-label" for="form11Example2">Dimension</label>
-                                  </div>
-                                </div>
-                              </div> 
-                              <div class="row mb-4">
-                                <div class="col">
-                                  <div class="form-outline">
-                                    <input type="text" id="form11Example1" class="form-control" name="poids"/>
-                                    <label class="form-label" for="form11Example1">Poids</label>
-                                  </div>
-                                </div>
-                              </div> 
-                              <div class="text-center">
-                                <button type="button" style="background-color: rgb(23, 194, 190);" class="btn ">SAUVEGARDER</button>
-                              </div>
-                          </form>
+        <div class="container-content">        
+              <div class="tableau">
+                <table class="table align-middle mb-0 bg-white">
+                  <thead class="" style="background-color:rgb(23, 194, 190); color:white">
+                    <tr class="text-center">
+                      <th>Image & Nom</th>
+                      <th>Model</th>
+                      <th>Prix</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px"
+                            class="" />
+                          <div class="ms-3">
+                            <p class="fw-bold ">APPLE</p>
+                          </div>
                         </div>
-              
-                      </div>
-                      
-              
+                      </td>
+                      <td>
+                        <p class="text-muted">Iphone 11</p>
+                      </td>
+                      <td>
+                        <p class="text-muted">316.000 F CFA</p>
+                      </td>
+                      <td class="d-flex justify-content-lg-evenly ">
+                        <a href="#" class="btn btn"><i class="fa-solid fa-eye"></i>View</a>
+                        <a href="#" class="btn btn-primary"><i class="fa-solid fa-pencil"></i>Update</a>
+                        <a href="#" class="btn btn-danger"><i class="fa-solid fa-trash"></i>Delete</a>
+                      </td>
+                    </tr>
+
+                   
+                  </tbody>
+                </table>
+              </div>
+              <div class="formulaire bg-white">
+                <form action="" method="post">
+                    <div class="col-12 text-center pb-3">
+                      <select class="select" name="cathegorie">
+                        <option value="" disabled selected>-- Cathegorie --</option>
+                        <option value="infinix">Infinix</option>
+                        <option value="iphone">Iphone</option>
+                        <option value="itel">Itel</option>
+                        <option value="tecno">Tecno</option>
+                        <option value="samsung">Samsung</option>
+                        <option value="xiami">Xiami</option>
+                      </select>
                     </div>
-              
-              
-              
-              
-              
-              
-                  </div>
-              
-                </section>
-                <!--Section: Design Block-->
+                </form>
+                <div class="">
+                  <form>
+                    <div class="row mb-4">
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example1" class="form-control" name="type_produit" />
+                          <label class="form-label" for="form11Example1">type de produit</label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example2" class="form-control" name="nom" />
+                          <label class="form-label" for="form11Example2">Nom du produit</label>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <div class="row mb-4">
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example1" class="form-control" name="cathegorie" />
+                          <label class="form-label" for="form11Example1">Cathegorie</label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example2" class="form-control" name="model" />
+                          <label class="form-label" for="form11Example2">Model</label>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <div class="row mb-4">
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example1" class="form-control" name="reseau" />
+                          <label class="form-label" for="form11Example1">Reseau</label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example2" class="form-control" name="dual_sim" />
+                          <label class="form-label" for="form11Example2">Dual sim</label>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <div class="row mb-4">
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example1" class="form-control" name="ecran" />
+                          <label class="form-label" for="form11Example1">Ecran</label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example2" class="form-control" name="resolution" />
+                          <label class="form-label" for="form11Example2">Resolution</label>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <div class="row mb-4">
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example1" class="form-control" name="ram" />
+                          <label class="form-label" for="form11Example1">Memoire ram</label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example2" class="form-control" name="rom" />
+                          <label class="form-label" for="form11Example2">Memoire rom</label>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <div class="row mb-4">
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example1" class="form-control" name="camera_arriere" />
+                          <label class="form-label" for="form11Example1">Camera arriere</label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example2" class="form-control" name="camera_avant" />
+                          <label class="form-label" for="form11Example2">Camera avant</label>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <div class="row mb-4">
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example1" class="form-control" name="systeme_exploitation" />
+                          <label class="form-label" for="form11Example1">Systeme d'exploitation</label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example2" class="form-control" name="connectivite" />
+                          <label class="form-label" for="form11Example2">Connectivite</label>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <div class="row mb-4">
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example1" class="form-control" name="batterie" />
+                          <label class="form-label" for="form11Example1">Batterie</label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example2" class="form-control" name="dimension" />
+                          <label class="form-label" for="form11Example2">Dimension</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mb-4">
+                      <div class="col">
+                        <div class="form-outline">
+                          <input type="text" id="form11Example1" class="form-control" name="poids" />
+                          <label class="form-label" for="form11Example1">Poids</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center">
+                      <button type="button" style="background-color: rgb(23, 194, 190);" class="btn ">SAUVEGARDER</button>
+                    </div>
+                  </form>
+                </div>
+
+              </div>
+             
               
               </div>
         </div>

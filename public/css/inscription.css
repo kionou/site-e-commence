@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Kaushan+Script&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@1,200&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Kaushan Script', cursive;
+    font-family: 'Roboto Serif', serif;
     background-color: #f5f5f5;
 }
 
@@ -20,6 +20,7 @@ header {
     justify-content: center;
     overflow: hidden;
     align-items: center;
+    font-family: 'Kaushan Script', cursive;
 }
 
 .heade {
@@ -71,7 +72,7 @@ header {
     display: none;
     border-radius: 5px;
     border: none;
-    font-family: cursive;
+    font-family: 'Kaushan Script', cursive;
     font-size: 16px;
 }
 
@@ -145,7 +146,7 @@ input{
     outline: none;
     border: none;
     border-bottom: 2px solid #f5f5f5;
-    font-family: cursive;
+    font-family: 'Roboto Serif', serif;
 }
 
 input::placeholder{
