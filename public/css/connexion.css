@@ -106,7 +106,28 @@ header {
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    /* display: none; */
 
+}
+.Container {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 330px;
+    border: 1px solid rgb(23, 194, 190);
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    display: none;
+    padding: 25px;
+}
+
+.Container p{
+    padding: 15px;
 }
 
 form {
@@ -146,6 +167,20 @@ input {
     border-bottom: 2px solid #f5f5f5;
     font-family: 'Roboto Serif', serif;
 }
+#input{
+        height: 3rem;
+        width: 30rem;
+        padding: 10px;
+        font-size: 18px;
+        outline: none;
+        border: 1px solid;
+        border-radius: 10px;
+        font-family: 'Roboto Serif', serif;
+}
+#input:hover{
+    border: 1px solid rgb(23, 194, 190);
+}
+
 
 input::placeholder {
     opacity: 0;
@@ -193,6 +228,26 @@ button {
 }
 
 button:hover {
+    background-color: white;
+    color: rgb(23, 194, 190);
+    border: 1px solid rgb(23, 194, 190);
+    cursor: pointer;
+}
+
+.btnPassword {
+    width: 10rem;
+    height: 3rem;
+    margin-top: 25px;
+    text-align: center;
+    border: none;
+    background-color: rgb(23, 194, 190);
+    color: white;
+    border-radius: 5px;
+    font-size: 23px;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.btnPassword:hover {
     background-color: white;
     color: rgb(23, 194, 190);
     border: 1px solid rgb(23, 194, 190);
@@ -259,6 +314,16 @@ button:hover {
         padding: 10px 10px 80px 10px;
     }
 
+    .Container{
+        width: 100%;
+        height: auto;
+    }
+   
+
+    .btnPassword{
+        height: auto;
+    }
+
     form{
         padding: 35px;
     }
@@ -274,6 +339,10 @@ button:hover {
 @media (max-width: 498px) {
     .container {
         width: 68%;
+    }
+
+    #input{
+        width: 20rem;
     }
 }
 

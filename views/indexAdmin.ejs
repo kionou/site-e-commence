@@ -26,9 +26,11 @@
             </nav>
         </div>
     </header>
+    
     <div class="container-fluid">
         <div class="container-content">        
               <div class="tableau">
+                <button class="btn btn-primary float-end mb-2 " style="font-size:15px ;"><i class="fa-solid fa-circle-plus"></i>Ajouter un Article</button>
                 <table class="table align-middle mb-0 bg-white">
                   <thead class="" style="background-color:rgb(23, 194, 190); color:white">
                     <tr class="text-center">
@@ -38,60 +40,255 @@
                       <th>Actions</th>
                     </tr>
                   </thead>
+                <% if (article=='' ) { %>
+                  <p>Pas Article pour le moment</p>
+                <% } else if (article ){%>
+                 <% article.forEach(function(article){ %>
                   <tbody>
                     <tr>
                       <td>
                         <div class="d-flex align-items-center">
-                          <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px"
+                          <img src="/<%= article.image %>" alt="" style="width: 45px; height: 45px"
                             class="" />
                           <div class="ms-3">
-                            <p class="fw-bold ">APPLE</p>
+                            <p class="fw-bold "><%= article.nom %></p>
                           </div>
                         </div>
                       </td>
                       <td>
-                        <p class="text-muted">Iphone 11</p>
+                        <p class="text-muted"><%= article.model %></p>
                       </td>
                       <td>
-                        <p class="text-muted">316.000 F CFA</p>
+                        <p class="text-muted"><%= article.prix %> F CFA</p>
                       </td>
                       <td class="d-flex justify-content-lg-evenly ">
-                        <a href="#" class="btn btn"><i class="fa-solid fa-eye"></i>View</a>
-                        <a href="#" class="btn btn-primary"><i class="fa-solid fa-pencil"></i>Update</a>
-                        <a href="#" class="btn btn-danger"><i class="fa-solid fa-trash"></i>Delete</a>
+                        <a href="/detail/<%= article.id %>" class="btn btn"><i class="fa-solid fa-eye"></i>View</a>
+                        <a href="/Admin/<%= article.id %>" class="btn btn-primary"><i class="fa-solid fa-pencil"></i>Update</a>
+                        <button onclick="oppen('<%= article.id %>')" class="btn btn-danger"><i class="fa-solid fa-trash"></i>Delete</button>
                       </td>
-                    </tr>
-
-                   
+                    </tr>  
+                  
                   </tbody>
+                 <% }); %>
+                 <% } %>
                 </table>
               </div>
+
+              <% if (editer=='' ){ %>
+                <div class="formulaire bg-white">
+                  <form action="/Admin" method="post" enctype="multipart/form-data">
+                    <% if (cathegorie=='' ){ %>
+                      <p>Pas de Cathegorie disponible pour le moment</p>
+                      <% } else if (cathegorie){ %>
+                        <div class="col-12 text-center pb-3">
+                          <select class="select" name="id_cathegorie">
+                            <option value="" disabled selected>-- Cathegorie --</option>
+                            <% cathegorie.forEach(function(cathegorie){ %>
+                              <option value="<%= cathegorie.id %>">
+                                <%= cathegorie.nom %>
+                              </option>
+                              <% }); %>
+                          </select>
+                        </div>
+                        <% } %>
+                          <div class="dd">
+                            <div class="row mb-4">
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example1"  class="form-control"
+                                    name="type_produit" />
+                                  <label class="form-label" for="form11Example1">type de produit</label>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example2" class="form-control" name="nom" />
+                                  <label class="form-label" for="form11Example2">Nom du produit</label>
+                                </div>
+                              </div>
+                            </div>
+                
+                            <div class="row mb-4">
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="file" id="form11Example1" class="form-control" name="image" />
+                                  <label class="form-label" for="form11Example1"></label>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example2" class="form-control" name="model" />
+                                  <label class="form-label" for="form11Example2">Model</label>
+                                </div>
+                              </div>
+                            </div>
+                
+                            <div class="row mb-4">
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example1" class="form-control" name="reseau" />
+                                  <label class="form-label" for="form11Example1">Reseau</label>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example2" class="form-control" name="dual_sim" />
+                                  <label class="form-label" for="form11Example2">Dual sim</label>
+                                </div>
+                              </div>
+                            </div>
+                
+                            <div class="row mb-4">
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example1" class="form-control" name="ecran" />
+                                  <label class="form-label" for="form11Example1">Ecran</label>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example2" class="form-control" name="resolution" />
+                                  <label class="form-label" for="form11Example2">Resolution</label>
+                                </div>
+                              </div>
+                            </div>
+                
+                            <div class="row mb-4">
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example1" class="form-control" name="ram" />
+                                  <label class="form-label" for="form11Example1">Memoire ram</label>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example2" class="form-control" name="rom" />
+                                  <label class="form-label" for="form11Example2">Memoire rom</label>
+                                </div>
+                              </div>
+                            </div>
+                
+                            <div class="row mb-4">
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example1" class="form-control" name="camera_arriere" />
+                                  <label class="form-label" for="form11Example1">Camera arriere</label>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example2" class="form-control" name="camera_avant" />
+                                  <label class="form-label" for="form11Example2">Camera avant</label>
+                                </div>
+                              </div>
+                            </div>
+                
+                            <div class="row mb-4">
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example1" class="form-control" name="systeme_exploitation" />
+                                  <label class="form-label" for="form11Example1">Systeme d'exploitation</label>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example2" class="form-control" name="connectivite" />
+                                  <label class="form-label" for="form11Example2">Connectivite</label>
+                                </div>
+                              </div>
+                            </div>
+                
+                            <div class="row mb-4">
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example1" class="form-control" name="batterie" />
+                                  <label class="form-label" for="form11Example1">Batterie</label>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example2" class="form-control" name="dimension" />
+                                  <label class="form-label" for="form11Example2">Dimension</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row mb-4">
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="date" id="form11Example1" class="form-control" name="date_ajouter" />
+                                  <label class="form-label" for="form11Example1">date-ajouter</label>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="date" id="form11Example2" class="form-control" name="date_update" />
+                                  <label class="form-label" for="form11Example2">date-update</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row mb-4">
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example1" class="form-control" name="poids" />
+                                  <label class="form-label" for="form11Example1">Poids</label>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example2" class="form-control" name="prix" />
+                                  <label class="form-label" for="form11Example2">prix</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row mb-4">
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="text" id="form11Example1" class="form-control" name="processeur" />
+                                  <label class="form-label" for="form11Example1">processeur</label>
+                                </div>
+                              </div>
+                
+                            </div>
+                          </div>
+                
+                
+                          <div class="text-center">
+                            <button style="background-color: rgb(23, 194, 190);" class="btn ">SAUVEGARDER</button>
+                          </div>
+                  </form>
+                </div>
+
+                <% } else if (editer){ %>
+                  <% editer.forEach(function(editer){ %>
               <div class="formulaire bg-white">
-                <form action="" method="post">
+                <form action="/Admin/editer" method="post" enctype="multipart/form-data">
+                   <% if (cathegorie=='' ){ %>
+                       <p>Pas de Cathegorie disponible pour le moment</p>
+                   <% } else if (cathegorie){ %>
                     <div class="col-12 text-center pb-3">
-                      <select class="select" name="cathegorie">
+                      <select class="select" name="id_cathegorie">
                         <option value="" disabled selected>-- Cathegorie --</option>
-                        <option value="infinix">Infinix</option>
-                        <option value="iphone">Iphone</option>
-                        <option value="itel">Itel</option>
-                        <option value="tecno">Tecno</option>
-                        <option value="samsung">Samsung</option>
-                        <option value="xiami">Xiami</option>
+                        <% cathegorie.forEach(function(cathegorie){ %>
+                        <option value="<%= cathegorie.id %>"><%= cathegorie.nom %></option>
+                        <% }); %>
                       </select>
                     </div>
-                </form>
-                <div class="">
-                  <form>
+                      <% } %>
+
+
+                 
+                <div class="dd">
                     <div class="row mb-4">
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example1" class="form-control" name="type_produit" />
+                          <input type="hidden" value="<%= editer.id %>" name="id" >
+                          <input type="text" id="form11Example1" value="<%= editer.type_bien %>" class="form-control" name="type_produit" />
                           <label class="form-label" for="form11Example1">type de produit</label>
                         </div>
                       </div>
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example2" class="form-control" name="nom" />
+                          <input type="text" id="form11Example2" value="<%= editer.nom %>" class="form-control" name="nom" />
                           <label class="form-label" for="form11Example2">Nom du produit</label>
                         </div>
                       </div>
@@ -100,13 +297,13 @@
                     <div class="row mb-4">
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example1" class="form-control" name="cathegorie" />
-                          <label class="form-label" for="form11Example1">Cathegorie</label>
+                          <input type="file" id="form11Example1"  src='<%= editer.image %>' value="<%= editer.image %>" class="form-control" name="image" />
+                          <label class="form-label" for="form11Example1"></label>
                         </div>
                       </div>
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example2" class="form-control" name="model" />
+                          <input type="text" id="form11Example2" value="<%= editer.model %>" class="form-control" name="model" />
                           <label class="form-label" for="form11Example2">Model</label>
                         </div>
                       </div>
@@ -115,13 +312,13 @@
                     <div class="row mb-4">
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example1" class="form-control" name="reseau" />
+                          <input type="text" id="form11Example1" value="<%= editer.reseau %>" class="form-control" name="reseau" />
                           <label class="form-label" for="form11Example1">Reseau</label>
                         </div>
                       </div>
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example2" class="form-control" name="dual_sim" />
+                          <input type="text" id="form11Example2" value="<%= editer.dual_sim %>" class="form-control" name="dual_sim" />
                           <label class="form-label" for="form11Example2">Dual sim</label>
                         </div>
                       </div>
@@ -130,13 +327,13 @@
                     <div class="row mb-4">
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example1" class="form-control" name="ecran" />
+                          <input type="text" id="form11Example1"value="<%= editer.ecran %>" class="form-control" name="ecran" />
                           <label class="form-label" for="form11Example1">Ecran</label>
                         </div>
                       </div>
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example2" class="form-control" name="resolution" />
+                          <input type="text" id="form11Example2" value="<%= editer.resolution %>" class="form-control" name="resolution" />
                           <label class="form-label" for="form11Example2">Resolution</label>
                         </div>
                       </div>
@@ -145,13 +342,13 @@
                     <div class="row mb-4">
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example1" class="form-control" name="ram" />
+                          <input type="text" id="form11Example1" value="<%= editer.ram %>" class="form-control" name="ram" />
                           <label class="form-label" for="form11Example1">Memoire ram</label>
                         </div>
                       </div>
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example2" class="form-control" name="rom" />
+                          <input type="text" id="form11Example2" value="<%= editer.rom %>" class="form-control" name="rom" />
                           <label class="form-label" for="form11Example2">Memoire rom</label>
                         </div>
                       </div>
@@ -160,13 +357,13 @@
                     <div class="row mb-4">
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example1" class="form-control" name="camera_arriere" />
+                          <input type="text" id="form11Example1" value="<%= editer.camera_arriere %>" class="form-control" name="camera_arriere" />
                           <label class="form-label" for="form11Example1">Camera arriere</label>
                         </div>
                       </div>
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example2" class="form-control" name="camera_avant" />
+                          <input type="text" id="form11Example2" value="<%= editer.camera_avant %>" class="form-control" name="camera_avant" />
                           <label class="form-label" for="form11Example2">Camera avant</label>
                         </div>
                       </div>
@@ -175,13 +372,13 @@
                     <div class="row mb-4">
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example1" class="form-control" name="systeme_exploitation" />
+                          <input type="text" id="form11Example1" value="<%= editer.systeme_exploitation %>" class="form-control" name="systeme_exploitation" />
                           <label class="form-label" for="form11Example1">Systeme d'exploitation</label>
                         </div>
                       </div>
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example2" class="form-control" name="connectivite" />
+                          <input type="text" id="form11Example2" value="<%= editer.connectivite %>" class="form-control" name="connectivite" />
                           <label class="form-label" for="form11Example2">Connectivite</label>
                         </div>
                       </div>
@@ -190,30 +387,64 @@
                     <div class="row mb-4">
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example1" class="form-control" name="batterie" />
+                          <input type="text" id="form11Example1" value="<%= editer.batterie %>" class="form-control" name="batterie" />
                           <label class="form-label" for="form11Example1">Batterie</label>
                         </div>
                       </div>
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example2" class="form-control" name="dimension" />
+                          <input type="text" id="form11Example2" value="<%= editer.dimension %>" class="form-control" name="dimension" />
                           <label class="form-label" for="form11Example2">Dimension</label>
                         </div>
                       </div>
                     </div>
+                        <div class="row mb-4">
+                          <div class="col">
+                            <div class="form-outline">
+                              <input type="text" hidden id="form11Example1" value="<%= editer.date_ajouter %>" class="form-control" name="date_ajouter" />
+                              <label class="form-label" for="form11Example1">date-ajouter</label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="form-outline">
+                              <input type="date" id="form11Example2" value="<%= editer.date_update %>" class="form-control" name="date_update" />
+                              <label class="form-label" for="form11Example2">date-update</label>
+                            </div>
+                          </div>
+                        </div>
                     <div class="row mb-4">
                       <div class="col">
                         <div class="form-outline">
-                          <input type="text" id="form11Example1" class="form-control" name="poids" />
+                          <input type="text" id="form11Example1" value="<%= editer.poids %>" class="form-control" name="poids" />
                           <label class="form-label" for="form11Example1">Poids</label>
                         </div>
                       </div>
+                        <div class="col">
+                          <div class="form-outline">
+                            <input type="text" id="form11Example2" value="<%= editer.prix %>" class="form-control" name="prix" />
+                            <label class="form-label" for="form11Example2">prix</label>
+                          </div>
+                        </div>
                     </div>
+                      <div class="row mb-4">
+                        <div class="col">
+                          <div class="form-outline">
+                            <input type="text" id="form11Example1" value="<%= editer.processeur %>" class="form-control" name="processeur" />
+                            <label class="form-label" for="form11Example1">processeur</label>
+                          </div>
+                        </div>
+                      
+                      </div>
+                </div>
+                 
+
                     <div class="text-center">
-                      <button type="button" style="background-color: rgb(23, 194, 190);" class="btn ">SAUVEGARDER</button>
+                      <button  style="background-color: rgb(23, 194, 190);" class="btn ">SAUVEGARDER</button>
                     </div>
                   </form>
                 </div>
+                <% }); %>
+                  <% } %>
 
               </div>
              
@@ -222,8 +453,23 @@
         </div>
     </div>
 
+  
+        <div class="modal-container" id="modal">
+          <div class="modal">
+            <!-- <i class="fas fa-heart"></i> -->
+            <p>Voulez-vous vraiment supprimer cet article du panier?</p>
+            <div class="boutton">
+            
+      
+            </div>
+            <i id="closer" class="fas fa-times"></i>
+          </div>
+        </div>
+  
+
     <!-- MDB -->
 <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"
 ></script>
+<script src="/js/admin.js"></script>
 </body>
 </html>

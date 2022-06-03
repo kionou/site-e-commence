@@ -1,17 +1,25 @@
 const express = require("express");
+const session = require("express-session");
 const base = require("./others/data");
 const router = require("./router/routeAccueil");
 const routeAdmin = require("./router/routeAdmin");
-const app = express()
+const app = express();
+
 
 base.connect((err) =>{
      if (!err){
             console.log('connexion a la base de donnée'); 
             app.set('view engine','ejs');
-            app.set('views','./views')
+            app.set('views','./views');
+            app.use('/uploads',express.static('./uploads'))
             app.use(express.static('public'));
             app.use(express.json())
-            app.use(express.urlencoded({ extended: false })) ;
+            app.use(express.urlencoded({ extended: false }));
+            app.use(session({ 
+                    secret: 'keyboard cat',
+                    resave: false,
+                    saveUninitialized: true,
+                    cookie: { maxAge: 60000000000 }}))
             app.use('/',router)
             app.use('/Admin',routeAdmin)
     }else{

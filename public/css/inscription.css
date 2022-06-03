@@ -125,6 +125,7 @@ form {
 .input-form{
     display: flex;
     flex-direction: column-reverse;
+    justify-content: space-around;
 }
 
 input , label , button {
@@ -132,7 +133,7 @@ input , label , button {
 }
 
 label{
-    transform: translate(10px,-15px);
+    transform: translate(10px,-1px);
     cursor: text;
     transform-origin: left top;
     position: absolute;

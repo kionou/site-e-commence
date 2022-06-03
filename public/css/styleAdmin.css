@@ -87,7 +87,7 @@ header {
 /* container debut */
 .container-fluid{
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,7 +96,7 @@ header {
 
 .container-content{
     width: 100%;
-    height: 90%;
+    height: auto;
     display: flex;
     justify-content: space-between;
     /* border: 1px solid blue; */
@@ -137,3 +137,82 @@ select{
     box-shadow: none;
     border: 1px solid rgb(23, 194, 190);
 }  
+
+tbody{
+    border-bottom: 1px solid rgb(23, 194, 190);
+}
+
+/* modal debut */
+.modal-container {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .3);
+    z-index: 20;
+    opacity: 1;
+}
+
+ .modal {
+    height: 238px;
+    max-width: 341px;
+    margin: 0 10px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block !important;
+}
+
+.modal-container .modal p {
+    font-size: 19px;
+    margin-top: 55px;
+}
+
+.modal-container .modal .fa-times {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    color: rgb(23, 194, 190);
+}
+
+.boutton {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btnredirect {
+    width: 6rem;
+    height: 3rem;
+    margin-top: 20px;
+    text-align: center;
+    border: none;
+    background-color: rgb(23, 194, 190);
+    color: white;
+    border-radius: 5px;
+    font-size: 23px;
+    font-family: 'Roboto Serif',
+        serif;
+}
+
+.btnredirect:hover {
+    background-color: white;
+    color: rgb(23, 194, 190);
+    border: 1px solid rgb(23, 194, 190);
+    cursor: pointer;
+}
+
+/* modal fin */
+@media (max-width :1510px){
+    .btn{
+        padding: 6px;
+    }
+}

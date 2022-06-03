@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr  a">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,54 +28,9 @@
       <div class="container-contente">
             <div class="container-content">
                 <div class="panier">
-                    <div class="text">
-                        <p>Panier <span>(5)</span></p>
-                    </div>
-                    <!-- <div class="trait_dessus"></div> -->
-                 <% success.forEach(function(article){ %>
-                    <div class="panier-content">
-                        <div class="detail">
-                            <div class="image">
-                                <img src="<%= article.image %>" alt="">
-                            </div>
-                            <div class="nomBien">
-                                <p><%= article.nom %> <%= article.model %> -<%= article.ecran %>  -<%= article.reseau %> - <%= article.rom %> - <%= article.ram %></p>
-                                <div class="supp">
-                                    <button id="open" class=""><i class="fas fa-trash"></i> supprimer</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="prix">
-                            <p><%= article.prix %> F CFA</p>
-                            <div class="quantite">
-                                <button id="decrement" onclick=""> - </button>
-                                <input type="number" min="0" max="100" step="5" value="1" id="my-input" readonly>
-                                <button id="increment" onclick=""> + </button>
-                            </div>
-                        </div>
-                    </div>
-                 <% }); %>
-                    <!-- <div class="panier-content">
-                                <div class="detail">
-                                    <div class="image">
-                                        <img src="/images/4.webp" alt="">
-                                    </div>
-                                    <div class="nomBien">
-                                        <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
-                                        <div class="supp">
-                                            <button  class="" ><i class="fas fa-trash"></i> supprimer</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="prix">
-                                    <p>100.000 F CFA</p>
-                                    <div class="quantite">
-                                        <button id="decrement" onclick=""> - </button>
-                                        <input type="number" min="0" max="100"  step="5" value="2" id="my-input" readonly>
-                                        <button id="increment" onclick=""> + </button>
-                                    </div>
-                                </div>
-                            </div>
+                   
+                     </div> 
+<!-- 
                             <div class="panier-content">
                                 <div class="detail">
                                     <div class="image">
@@ -117,7 +72,7 @@
                                         <button id="increment" onclick=""> + </button>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>  -->
                 </div>
                 <div class="factures">
                     <div class="facture">

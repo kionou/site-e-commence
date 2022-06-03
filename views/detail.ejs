@@ -27,22 +27,20 @@
          <% success.forEach(function(article){ %>
             <div class="detail">
                 <div class="detail-image">
-                    <img src="<%= article.image %>" alt="">
+                    <img class="image" src="/<%= article.image %>" alt="">
                 </div>
                 <div class="detail-content">
-                    <p> <span><%= article.nom %> <%= article.model %> - <%= article.ecran %> -<%= article.reseau %> - <%= article.rom %> - <%= article.ram %></span> </p>
-                    <p>Marque :  <span><%= article.nom %></span> </p>
-                    <p>Référence :  <span><%= article.model %> </span> </p>
+                    <p > <span id="contenu"><%= article.nom %> <%= article.model %> - <%= article.ecran %> -<%= article.reseau %> - <%= article.rom %> - <%= article.ram %></span> </p>
+                    <p>Marque :  <span class="nom_ar"><%= article.nom %></span> </p>
+                    <p>Référence :  <span class="model_ar"><%= article.model %> </span> </p>
                     <div class="prix">
-                        <p> <span><%= article.prix %></span> F CFA</p>
+                        <p> <span id="prix"><%= article.prix %></span> F CFA</p>
                         <div class="quantite">
-                            <button id="decrement" onclick=""> - </button>
-                            <input type="number" min="0" max="100"  step="5" value="1" id="my-input" readonly>
-                            <button id="increment" onclick=""> + </button>
+                            <button id="decrement" > - </button>
+                            <span id="input">01</span>
+                            <button id="increment" > + </button>
                         </div>
-                        
-                    
-                        <button  class="ajouter"><a href="/panier/<%= article.id %>">AJOUTER AU PANIER</a></button>
+                        <button  class="ajouter" value="<%= article.id %>">AJOUTER AU PANIER</button>
                     </div>
                 </div>
             </div>

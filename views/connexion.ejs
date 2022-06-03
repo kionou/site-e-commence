@@ -29,26 +29,50 @@
                     <div class="texte">
                         <h2>CONNEXION</h2>
                     </div>
-                    <form action="/connexion  " method="post">
-
+                    <% if (typeof alerte !="undefined" && alerte) { %>
+                        <div class="validation">
+                            <%= alerte %>
+                        </div>
+                     <% }%>
+                    <form action="" method="post">
                     <div class="input-form">
+                          <% if (typeof alert !="undefined" && alert.email) { %>
+                            <div class="validation">
+                                <%= alert.email.msg %>
+                            </div>
+                            <% }%>
                         <input type="email" class="input" name="email" placeholder=" ">
                         <label for="email">Adresse Email</label>
-                        <!-- <p>fffliojdhidaaa</p> -->
+                      
                     </div>
                     <div class="input-form">
+                        <% if (typeof alert !="undefined" && alert.password) { %>
+                            <div class="validation">
+                                <%= alert.password.msg %>
+                            </div>
+                            <% }%>
                         <input type="password" class="input" name="password" placeholder=" ">
                         <label for="password">Mot de passe</label>
-                        <!-- <p>fdqgfgfg</p> -->
+                   
                     </div>
                     <div class="mot-passe">
-                    <a href="#">Mot de passe oublié ?</a>
+                    <a class="password" href="#">Mot de passe oublié ?</a>
                     </div>
-                    <button type="submit" value="Submit">Connecter</button>
+                    <button >Connecter</button>
                     </form>
                     <div class="texte">
                         <p>Vous aviez pas de compte? <a class="sanp" href="/inscription"><span>Cliquer ici</span></a></p>
                     </div>
+        </div>
+
+        <div class="Container">
+            <h1>MOT DE PASSE OUBLIE ?</h1>
+            <p>Entrez l'email que vous avez utilisé pour créer votre compte.Vous recevrez un lien pour réinitialiser votre mot de passe.</p>
+            <form action="/passwordOublie" method="post">
+                <input type="email" id="input" name="email" placeholder="Entrez votre Adresse Email">
+                 <button class="btnPassword">ENVOYER</button>
+
+            </form>
         </div>
     </div>
 
@@ -56,6 +80,6 @@
 
 
     <script src="https://kit.fontawesome.com/0eca8d30fc.js" crossorigin="anonymous"></script>
-    <script src="/js/main.js"></script>
+    <script src="/js/inscription.js"></script>
 </body>
 </html>
