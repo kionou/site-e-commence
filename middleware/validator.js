@@ -71,3 +71,18 @@ body('password')
    .withMessage('Le mot de passe doit comporter entre 6 et 16 caractères')
 
 ]
+
+exports.ValiderPasword =[
+      body('confirmer_password')
+        .trim()
+        .isLength({min:6, max:16})
+       .withMessage('Le mot de passe doit comporter entre 6 et 16 caractères')
+       .custom(async (confirmer_password, {req}) => {
+        const password = req.body.password
+   
+        if(password !== confirmer_password){
+          throw new Error('Les mots de passe doivent être identiques')
+        }
+    }),
+
+]

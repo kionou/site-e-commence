@@ -1,6 +1,6 @@
 const express = require("express");
 const controlleur = require("../controllers/AccueilControl");
-const { ValiderRegistre, validerConnection } = require("../middleware/validator");
+const { ValiderRegistre, validerConnection, ValiderPasword } = require("../middleware/validator");
 const router = express.Router();
 
 
@@ -21,6 +21,8 @@ router.post('/search',controlleur.SearchPost)
 router.post('/passwordOublie',controlleur.PasswordOubliePost)
 router.get('/motdepasseoublie',controlleur.PasswordOublieGet);
 router.get('/recuperer/:id',controlleur.RecupererPassword)
+router.post('/recuperer',ValiderPasword,controlleur.RecupererPasswordPost)
+router.get('/erreur',controlleur.erreur404)
 
 
 

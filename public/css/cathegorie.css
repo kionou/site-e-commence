@@ -269,6 +269,13 @@ header {
     border: 1px solid rgb(23, 194, 190);
     cursor: pointer; 
 }
+
+.pagination .prev.disabled,
+.pagination .next.disabled{
+    pointer-events: none;
+    background-color: rgb(1, 228, 224);
+
+}
 .page{
     padding: 0 10px;
 }

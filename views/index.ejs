@@ -23,11 +23,8 @@
                     </form>
                     <li><a class="search" href="#"><i class="fas fa-search"></i></a></li>
                     <li><a href="/connexion"><i class="fas fa-user"></i></a></li>
-                    <% if (article=='' ){ %>
-                        <p>Boutique :<span>Pas encore disponible</span></p>
-                     <% } else if (article[0].id){ %>
-                    <li><a href="/panier/<%= article.id %>"><i class="fas fa-shopping-cart"></i></a></li>       
-                     <% } %>
+                    <li><a href="panier"><i class="fas fa-shopping-cart"></i></a></li>       
+                
                 </ul>
             </nav>
         </div>
@@ -45,6 +42,11 @@
         <div class="content">
             <div class="text"><span> CATHEGORIES</span></div>
             <div class="cathegorie-article">
+                <% if (cathegorie=='' ) { %>
+                    <div class="noresult">
+                        <p>Aucune Cathegorie disponible pour le moment  !</p>
+                    </div>
+                    <% } else if (cathegorie ){%>
                 <div class="cathegorie-content">  
                      <% cathegorie.forEach(function(cathegorie){ %>
                         <a href="/cathegorie/<%= cathegorie.id %>">
@@ -81,12 +83,17 @@
                     </a> -->
                     
                 </div>
+                <% } %>
             </div>
              <!-- <div class="trait_dessus"></div> -->
+            <% if (article=='' ) { %>
+                <div class="noresult">
+                    <p>Aucun Article disponible pour le moment !</p>
+                </div>
+                <% } else if (article){%>
             <div class="article iphone">
-
                 <div class="groupe">
-                    <div class="texte"><span> CATHEGORIES AFF</span></div>
+                    <div class="texte"><span> MEILLEUR MARQUE</span></div>
                     <div class="texte"><p>Afficher plus</p></div>
                     <div class="slider-btns">
                         <button aria-label="Previous" class="glider-prev">
@@ -222,8 +229,8 @@
                       </div>
         
                  </div>
-     </div>
-
+            </div>
+            <% } %>
    
    
     <script src="https://code.jquery.com/jquery-3.0.0.js"></script>

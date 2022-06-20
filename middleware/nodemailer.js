@@ -6,7 +6,7 @@ exports.mailer = (into,token)=>{
         service:'gmail', 
         auth: {
           user: 'kionoumohamed@gmail.com', 
-          pass: 'Laloi2015' 
+          pass: 'nibjtlrilhkglefw' 
         },
       });
     let lien =`http://192.168.88.11:8080/connexion/${token}`
@@ -21,9 +21,10 @@ exports.mailer = (into,token)=>{
       };
 
     
-    transporter.sendMail(mailOptions, (error, info)=>{
+    transporter.sendMail(mailOptions,(error, info)=>{
      if (error) {
-      console.log(error);
+      console.log('errror mail',error);
+
      } else {
       console.log('success' , info.response);
      }
@@ -35,7 +36,7 @@ exports.MailerPassword = (into,token)=>{
         service:'gmail', 
         auth: {
           user: 'kionoumohamed@gmail.com', 
-          pass: 'Laloi2015' 
+          pass: 'nibjtlrilhkglefw' 
         },
       });
     let lien =`http://192.168.88.11:8080/recuperer/${token}`

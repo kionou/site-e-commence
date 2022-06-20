@@ -1,24 +1,9 @@
-const moins = document.querySelector('#decrement');
-const plus = document.querySelector('#increment');
-const result = document.querySelector('#my-input');
-
-// result.disabled = true;
-// result.style.color = 'black'
-   
-//     plus.addEventListener('click',()=>{
-//     result.value = parseInt(result.value) + 1;
-// })
-    
+// const moins = document.querySelector('#decrement');
+// const plus = document.querySelector('#increment');
 
 
 
-// moins.addEventListener('click',()=>{
-//   result.value = parseInt(result.value) - 1;
-//   if (result.value<1) {
 
-//    result.value=1
-//   }
-//  })
 
 
 let icon = document.querySelector('.search');
@@ -39,24 +24,14 @@ function supp(id) {
     location.href ='/delete/' + id    
 }
 
-let modale = document.querySelector('#modal');
-let open = document.querySelector('#open');
-let closer = document.querySelector('#closer');
 
-// open.onclick = function() {
-//     modale.style.display = "block";
-// }
 
-// closer.onclick = function(e) {
-//     e.preventDefault()
-//     modale.style.display = "none";
-// } 
 
     let articleDansLocalstorage =JSON.parse(localStorage.getItem("articles"));
     console.log(articleDansLocalstorage);
     let panier =document.querySelector('.panier')
     let panierr = document.querySelector('.panier-content')
-    console.log(panier);
+   
 
     if (articleDansLocalstorage === null) {
         panier.innerHTML=`
@@ -72,22 +47,70 @@ let closer = document.querySelector('#closer');
                         <img src="/images/4.webp" alt="">
                     </div>
                     <div class="nomBien">
-                        <p>${articleDansLocalstorage[0].description}</p>
+                        <p>${articleDansLocalstorage[0].description} </p>
                         <div class="supp">
                             <button class=""><i class="fas fa-trash"></i> supprimer</button>
                         </div>
                     </div>
                 </div>
                 <div class="prix">
-                    <p>${articleDansLocalstorage[0].prix} F CFA</p>
+                    <p><span>${articleDansLocalstorage[0].prix} </span> F CFA</p>
                     <div class="quantite">
-                        <button id="decrement" onclick=""> - </button>
-                        <input type="number" min="0" max="100" step="5" value="2" id="my-input" readonly>
-                        <button id="increment" onclick=""> + </button>
+                        <button id="decrement" onclick="decrementer()"> - </button>
+                        <span id="input">01</span>
+                        <button id="increment" onclick="incrementer()"> + </button>
                     </div>
                 </div>
             </div>
            `
-           console.log('articleDansLocalstorage',articleDansLocalstorage[0]);
+ 
        });
     }
+
+
+
+// let modale = document.querySelector('#modal');
+// let open = document.querySelector('#open');
+// let closer = document.querySelector('#closer');
+
+// open.onclick = function() {
+//     modale.style.display = "block";
+// }
+
+// closer.onclick = function(e) {
+//     e.preventDefault()
+//     modale.style.display = "none";
+// } 
+ const result = document.querySelectorAll('#input');
+ const nbreArticle = document.querySelector('#article span');
+ const prix = document.querySelector('.prix p span').innerText;
+ const prix_article = document.querySelector('.prix_article')
+ 
+let a = 1;
+
+ let b =prix_article.innerHTML = prix;
+ 
+function incrementer() { 
+ let b =prix_article.innerHTML = prix;
+    let c = 0 
+    a++
+    a = (a < 10 ) ? "0" + a :a;
+    result.forEach(el => {
+        el.innerText = a
+    });
+    nbreArticle.innerText = a;
+    c= parseInt(b) * a
+    prix_article.innerText= c;
+}
+
+function decrementer() {  
+  if (1<a) {
+  a--;
+  a = (a < 10 ) ? "0" + a :a;
+  result.innerText = a;
+  nbreArticle.innerText = a;
+  b--
+  prix_article.innerText = prix_article.innerText - prix;
+    
+  }  
+}

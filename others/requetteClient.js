@@ -218,6 +218,25 @@ const dataBien = class{
 
     }
 
+      static ModifierPassword = (into)=>{
+    //    return new Promise((resolve,reject)=>{
+             let password = bcrypt.hashSync(into.password, 10);
+            let{nom,prenom,email,numero,ville,commune,image,id_article,date_ajouter,date_update,id}=into;
+    
+         let  sqle = "UPDATE `users` SET `nom`=?,`prenom`=?,`email`=?,`numero`=?,`password`=?,`ville`=?,`commune`=?,`image`=?,`id_article`=?,`date_ajouter`=?,`date_update`=? WHERE id = ?";
+             base.query(sqle,[nom,prenom,email,numero,password,ville,commune,image,id_article,date_ajouter,date_update,,id],(error,result)=>{
+            if (result) {
+                console.log(result);
+                // resolve(result)
+            } else {
+                console.log('errrr',error);
+                // reject(error)
+            }
+        })
+    //    })
+
+    }
+
 }
 
 

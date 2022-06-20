@@ -27,11 +27,57 @@
     </header>
 
     <div class="ImageHeader">
-        <div class="container">
-           <form action="">
-               <input id="input" type="password" name="">
-               <input id="input" type="password">
-               <button>envoyer</button>
+        <div class="container-passes">
+           <form action="/recuperer" method="post">
+                <% if (typeof user !="undefined" && user.id) { %>
+                    <input type="hidden" value=" <%= user.id %>" name="id">   
+                <% }%>
+
+                <% if (typeof user !="undefined" && user.nom) { %>
+                    <input type="hidden" value=" <%= user.nom %>" name="nom">
+                 <% }%>
+                <% if (typeof user !="undefined" && user.prenom) { %>
+                    <input type="hidden" value=" <%= user.prenom %>" name="prenom">
+                <% }%>
+                <% if (typeof user !="undefined" && user.email) { %>
+                    <input type="hidden" value=" <%= user.email %>" name="email">
+                <% }%>
+                <% if (typeof user !="undefined" && user.numero) { %>
+                    <input type="hidden" value=" <%= user.numero %>" name="numero">
+                <% }%>
+                <% if (typeof user !="undefined" && user.ville) { %>
+                    <input type="hidden" value=" <%= user.ville %>" name="ville">
+                <% }%>
+                <% if (typeof user !="undefined" && user.commune) { %>
+                    <input type="hidden" value=" <%= user.commune %>" name="commune">
+                <% }%>
+                <% if (typeof user !="undefined" && user.image) { %>
+                    <input type="hidden" value=" <%= user.image %>" name="image">
+                <% }%>
+                <% if (typeof user !="undefined" && user.id_article) { %>
+                    <input type="hidden" value=" <%= user.id_article %>" name="id_article">
+                <% }%>
+                <% if (typeof user !="undefined" && user.date_ajouter) { %>
+                    <input type="hidden" value=" <%= user.date_ajouter %>" name="date_ajouter">
+                <% }%>
+                <% if (typeof user !="undefined" && user.date_update) { %>
+                    <input type="hidden" value=" <%= user.date_update %>" name="date_update">
+                <% }%>
+                          
+                <div class="container-passe">
+                    <p>kionoumamadou.00@gmail.com</p>
+                    <h2>Modifier votre mot de passe</h2>
+                    <!-- <p>Un mot de passe fort empeche l'accès non autorisé à votre compte .</p> -->
+                    <p>Veuillez choisir un mot de passe comprenant au moins six caractères et une combinaison de lettres,
+                        de chiffres et symboles.N'utilisez pas de numéro ni caractère répétitif ou séquentiel,ou n'incluez
+                        pas d'informations de compte.
+                    </p>
+                    <input id="input" id="input" type="password" name="password" placeholder="Nouveau mot de passe ">
+                    <input id="input" type="password" name="confirmer_password" placeholder="Confirmer le mot de passe">
+                    <p>mot de passe incorrect</p>
+                    <button>envoyer</button>
+                </div>
+              
            </form>
         </div>
 

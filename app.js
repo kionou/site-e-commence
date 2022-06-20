@@ -21,7 +21,12 @@ base.connect((err) =>{
                     saveUninitialized: true,
                     cookie: { maxAge: 60000000000 }}))
             app.use('/',router)
-            app.use('/Admin',routeAdmin)
+            app.use('/Admin',routeAdmin);
+            app.use((req,res,next)=>{
+                res
+                .status(404)
+                .send('ERREUR 404')
+            })
     }else{
         
         console.log('connection echec ' + JSON.stringify(err , undefined ,2),err); 

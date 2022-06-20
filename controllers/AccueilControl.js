@@ -14,6 +14,7 @@ const bcrypt = require("bcrypt");
 const controlleur = class{
     static Accueil = async(req=request,res=response)=>{
         const article    =  await dataBien.AfficherArticle();
+        console.log('article',article);
         const cathegorie =  await  dataBien.AfficherCathegorie();
         res.render('index',{ article:article, cathegorie:cathegorie})
     
@@ -153,7 +154,9 @@ const controlleur = class{
             if (success == '') {
               res.render('password',{alert:'Nous n\'avons pas pu retrouver les informations nécessaires,peut-etre avez-vous utilisé un autre e-mail lors de l\'inscription ?'})
             } else {
-                 const token= jsonwt.CreerToken(req.body);
+          
+              
+                 const token= jsonwt.CreerToken(success);
                  MailerPassword(req.body.email,token);
                  res.render('password',{alert:'Un email a été envoyé à l\'adresse indiquée.Suivez les instructions pour créer un nouveau mot de passe'})
             }
@@ -165,7 +168,39 @@ const controlleur = class{
     }
 
      static RecupererPassword = (req=request,res=response)=>{
-        res.render('recupere')
+             const TokenId = req.params.id;
+              const DecodedToken= jsonwt.VerifierToken(TokenId);
+              console.log("dededede",DecodedToken[0].id);
+             res.render('recupere',{user:DecodedToken[0]})
+            // res.render('recupere')
+            // res.json(DecodedToken)
+    }
+
+     static RecupererPasswordPost = (req=request,res=response)=>{
+            console.log('tftjhduk',req.body);
+            const result = validationResult(req)
+             if (!result.isEmpty()){
+             const error = result.mapped()
+             console.log('rrfrrkrk',error ); 
+             res.render('recupere',{alert:error})
+             }else{
+                 console.log('requette',req.body);
+               dataBien.ModifierPassword(req.body)
+        //    .then(success =>{
+        //      res.json(success)
+        //     //  res.render('cathegorie',{success})
+        //  })
+        // .catch(error =>{
+        //      console.log(error);
+        //  })
+
+             }
+
+        // res.render('recupere')
+    }
+
+     static erreur404 = (req=request,res=response)=>{
+        res.render('erreur')
     }
 }
 

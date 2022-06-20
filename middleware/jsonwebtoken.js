@@ -2,8 +2,7 @@ const jwt = require('jsonwebtoken');
 
 const jsonwt = class{
     static CreerToken = (into)=>{
-        let dataUser ={...into}
-
+        let dataUser ={...into};
         const token = jwt.sign(dataUser, 'cHJvamV0IGRfZWR1Y2F0aW9u');
         console.log(token);
         return token;
