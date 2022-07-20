@@ -59,6 +59,9 @@ const dataBien = class{
         })
     }
 
+
+    
+
     static AfficherDetailArticle = (id) => {
         return new Promise ((resolve,reject)=>{
             let sql ="SELECT * FROM `article` WHERE `id` = ?;"
@@ -224,7 +227,7 @@ const dataBien = class{
             let{nom,prenom,email,numero,ville,commune,image,id_article,date_ajouter,date_update,id}=into;
     
          let  sqle = "UPDATE `users` SET `nom`=?,`prenom`=?,`email`=?,`numero`=?,`password`=?,`ville`=?,`commune`=?,`image`=?,`id_article`=?,`date_ajouter`=?,`date_update`=? WHERE id = ?";
-             base.query(sqle,[nom,prenom,email,numero,password,ville,commune,image,id_article,date_ajouter,date_update,,id],(error,result)=>{
+             base.query(sqle,[nom,prenom,email,numero,password,ville,commune,image,id_article,date_ajouter,date_update,id],(error,result)=>{
             if (result) {
                 console.log(result);
                 // resolve(result)

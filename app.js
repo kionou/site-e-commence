@@ -1,13 +1,13 @@
 const express = require("express");
 const session = require("express-session");
-const base = require("./others/data");
+const sequelize = require("./others/data");
 const router = require("./router/routeAccueil");
 const routeAdmin = require("./router/routeAdmin");
 const app = express();
 
 
-base.connect((err) =>{
-     if (!err){
+try {
+    sequelize.authenticate()
             console.log('connexion a la base de donnée'); 
             app.set('view engine','ejs');
             app.set('views','./views');
@@ -27,28 +27,12 @@ base.connect((err) =>{
                 .status(404)
                 .send('ERREUR 404')
             })
-    }else{
+    }catch (error){
         
         console.log('connection echec ' + JSON.stringify(err , undefined ,2),err); 
     }
-})
-    
-
 
     
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 app.listen(8080, ()=>{
     console.log('connecter au port  8080');
