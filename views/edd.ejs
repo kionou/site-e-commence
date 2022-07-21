@@ -29,13 +29,8 @@
     
     <div class="container-fluid">
         <div class="container-content">        
-              <div class="tableau d-flex justify-content-center align-items-center flex-column">
-                <!-- <button class="btn btn-primary float-end mb-2 " style="font-size:15px ;"><i class="fa-solid fa-circle-plus"></i>Ajouter un Article</button> -->
-                <button class="btn btn-primary float-end mb-2"  style="font-size:15px ;" data-mdb-toggle="modal" data-mdb-target="#exampleModal"><i class="fa-solid fa-circle-plus"></i>ajouter un Article</button>
-                  <% if (article=='' ) { %>
-                    <p>Pas Article pour le moment</p>
-                    <% } else if (article ){%>
-                    
+              <div class="tableau">
+                <button class="btn btn-primary float-end mb-2 " style="font-size:15px ;"><i class="fa-solid fa-circle-plus"></i>Ajouter un Article</button>
                 <table class="table align-middle mb-0 bg-white">
                   <thead class="" style="background-color:rgb(23, 194, 190); color:white">
                     <tr class="text-center">
@@ -45,7 +40,10 @@
                       <th>Actions</th>
                     </tr>
                   </thead>
-                    <% article.forEach(function(article){ %>
+                <% if (article=='' ) { %>
+                  <p>Pas Article pour le moment</p>
+                <% } else if (article ){%>
+                 <% article.forEach(function(article){ %>
                   <tbody>
                     <tr>
                       <td>
@@ -71,14 +69,12 @@
                     </tr>  
                   
                   </tbody>
-                  <% }); %>
-              
-                </table>
+                 <% }); %>
                  <% } %>
+                </table>
               </div>
-           
 
-           
+              <% if (editer=='' ){ %>
                 <div class="formulaire bg-white">
                   <form action="/Admin" method="post" enctype="multipart/form-data">
                     <% if (cathegorie=='' ){ %>
@@ -216,7 +212,20 @@
                                 </div>
                               </div>
                             </div>
-                          
+                            <div class="row mb-4">
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="date" id="form11Example1" class="form-control" name="date_ajouter" />
+                                  <label class="form-label" for="form11Example1">date-ajouter</label>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-outline">
+                                  <input type="date" id="form11Example2" class="form-control" name="date_update" />
+                                  <label class="form-label" for="form11Example2">date-update</label>
+                                </div>
+                              </div>
+                            </div>
                             <div class="row mb-4">
                               <div class="col">
                                 <div class="form-outline">
@@ -248,7 +257,7 @@
                           </div>
                   </form>
                 </div>
-                  <% if (editer=='' ){ %>
+
                 <% } else if (editer){ %>
                   <% editer.forEach(function(editer){ %>
               <div class="formulaire bg-white">
@@ -457,27 +466,6 @@
           </div>
         </div>
   
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog  modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title text-center" id="exampleModalLabel">Ajouter une marque</h5>
-            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form method="post" action="/Admin/categorie">
-              <div class="form-outline mb-4">
-                <input type="text" id="form1Example1" name="nom" class="form-control" />
-                <label class="form-label" for="form1Example1">Genre litteraire</label>
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">Valider</button>
-            </form>
-          </div>
-    
-        </div>
-      </div>
-    </div>
 
     <!-- MDB -->
 <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"

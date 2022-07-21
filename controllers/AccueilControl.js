@@ -2,33 +2,32 @@ const { request ,response } = require("express");
 const { validationResult } = require("express-validator");
 const jsonwt = require("../middleware/jsonwebtoken");
 const { mailer, MailerPassword } = require("../middleware/nodemailer");
-const dataBien = require("../others/requetteClient");
 const bcrypt = require("bcrypt");
-
-
-
-
+const dataArticle = require("../others/requetteArticle");
+const dataCategorie = require("../others/requetteCategorie");
 
 
 
 const controlleur = class{
     static Accueil = async(req=request,res=response)=>{
-        const article    =  await dataBien.AfficherArticle();
+        const article    =  await dataArticle.AfficherArticle();
         console.log('article',article);
-        const cathegorie =  await  dataBien.AfficherCathegorie();
-        res.render('index',{ article:article, cathegorie:cathegorie})
+        const cathegorie =  await  dataCategorie.AfficherCathegorie();
+        console.log("categorrie",cathegorie);
+        res.render('index',{ article:article.success, cathegorie:cathegorie.success})
     
     }
 
-    static Detail = (req=request,res=response)=>{
+    static Detail = async  (req=request,res=response)=>{
         const id = req.params.id
-        dataBien.AfficherDetailArticle(id)
-        .then(success =>{
-              res.render('detail',{success})
-         })
-        .catch(error =>{
-             console.log(error);
-         })
+      let article = await  dataArticle.AfficherDetailArticle(id)
+       if (article.success) {
+              res.render('detail',{success:article.success})
+        
+       } else {
+            console.log('articles ',article.erreur);
+       }
+       
     }
  
     static Authentification = (req=request,res=response)=>{
@@ -79,9 +78,9 @@ const controlleur = class{
 
     static Cathegorie =async (req=request,res=response)=>{
          const id = req.params.id;
-         const liste = await dataBien.AfficherListeArticle(id)
-         const nbre =  await  dataBien.AfficherNbreArticle(id);
-             res.render('cathegorie',{liste:liste,nombre:nbre})
+         const liste = await dataArticle.AfficherListeArticle(id)
+         const nbre =  await  dataArticle.AfficherNbreArticle(id);
+             res.render('cathegorie',{liste:liste.success,nombre:nbre.success})
 
         //  .then(success =>{
         //     //  res.json(success)

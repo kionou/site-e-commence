@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/glider.min.css">
     <title>Accueil</title>
 </head>
+
 <body>
     <header>
         <div class="heade">
             <div class="logo">
-            <a href="/">Djassa Online</a>
+                <a href="/">Djassa Online</a>
             </div>
             <nav>
                 <ul>
                     <form action="/search" method="post" class="formulaire">
-                    <li><input class="inputsearch" type="text" name="search" placeholder="Recherchez"></li>
+                        <li><input class="inputsearch" type="text" name="search" placeholder="Recherchez"></li>
                     </form>
                     <li><a class="search" href="#"><i class="fas fa-search"></i></a></li>
                     <li><a href="/connexion"><i class="fas fa-user"></i></a></li>
-                    <li><a href="panier"><i class="fas fa-shopping-cart"></i></a></li>       
-                
+                    <li><a href="panier"><i class="fas fa-shopping-cart"></i></a></li>
+
                 </ul>
             </nav>
         </div>
@@ -38,25 +41,28 @@
         </div>
     </div>
 
-     <div class="container-cathegorie">
+    <div class="container-cathegorie">
         <div class="content">
             <div class="text"><span> CATHEGORIES</span></div>
-            <div class="cathegorie-article">
-                <% if (cathegorie=='' ) { %>
-                    <div class="noresult">
-                        <p>Aucune Cathegorie disponible pour le moment  !</p>
-                    </div>
-                    <% } else if (cathegorie ){%>
-                <div class="cathegorie-content">  
-                     <% cathegorie.forEach(function(cathegorie){ %>
-                        <a href="/cathegorie/<%= cathegorie.id %>">
-                            <div class="cadre-cathegorie">
-                                <p><%= cathegorie.nom %></p>
-                            </div>
-                        </a>
-                     <% }); %>
 
-                    <!-- <a href="#">
+            <% if (cathegorie=='' ) { %>
+                <div class="noresult">
+                    <p>Aucune Cathegorie disponible pour le moment !</p>
+                </div>
+                <% } else if (cathegorie ){%>
+            <div class="cathegorie-article">
+               
+                        <div class="cathegorie-content">
+                            <% cathegorie.forEach(function(cathegorie){ %>
+                                <a href="/cathegorie/<%= cathegorie.id %>">
+                                    <div class="cadre-cathegorie">
+                                        <p>
+                                            <%= cathegorie.nom %>
+                                        </p>
+                                    </div>
+                                </a>
+                                <% }); %>
+                                    <!-- <a href="#">
                         <div class="cadre-cathegorie">
                             <p>Samsung</p>
                         </div>
@@ -81,163 +87,173 @@
                             <p>Samsung</p>
                         </div>
                     </a> -->
-                    
-                </div>
-                success
+
+                        </div>
+                        success
             </div>
-             <!-- <div class="trait_dessus"></div> -->
+                <% } %>
+
+            <!-- <div class="trait_dessus"></div> -->
             <% if (article=='' ) { %>
                 <div class="noresult">
                     <p>Aucun Article disponible pour le moment !</p>
                 </div>
                 <% } else if (article){%>
-            <div class="article iphone">
-                <div class="groupe">
-                    <div class="texte"><span> MEILLEUR MARQUE</span></div>
-                    <div class="texte"><p>Afficher plus</p></div>
-                    <div class="slider-btns">
-                        <button aria-label="Previous" class="glider-prev">
-                            <span></span>
-                        </button>
-                        <button aria-label="Next" class="glider-next">
-                            <span></span>
-                        </button>
-                    </div>
-                </div>
-               
-                <div class="trait_dessus"></div>
-                 <div class="container-cadre">  
-                    <div class="glider-contain">
-                        <div class="glider">
-                             <% article.forEach(function(article){ %>
-                                <div class="content-card">
-                                    <div class="card-image">
-                                        <a href="/detail/<%= article.id %>">
-                                            <img src="<%= article.image %>" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="card-body">
-                                        <p id="text"><%= article.nom %> <%= article.model %> - <%= article.ecran %>" -<%= article.reseau %> - <%= article.rom %> - <%= article.ram %></p>
-                                        <p><%= article.prix %> F CFA</p>
-                                        <a href="/detail/<%= article.id %>" class="btndetail">Détail</a>
-                                    </div>
-                                </div>
-                             <% }); %>
-
-                           
-
-                            <div class="content-card">
-                                <div class="card-image">
-                                  <a href="/detail">
-                                    <img src="/images/3.jpg" alt="">
-                                  </a>
-                                </div>
-                                <div class="card-body">
-                                    <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
-                                    <p>100.000 F CFA</p>
-                                    <a href="/detail" class="btndetail">Détail</a>
-                                </div>
+                    <div class="article iphone">
+                        <div class="groupe">
+                            <div class="texte"><span> MEILLEUR MARQUE</span></div>
+                            <div class="texte">
+                                <p>Afficher plus</p>
                             </div>
-                            <div class="content-card">
-                                <div class="card-image">
-                                  <a href="/detail">
-                                    <img src="/images/1.jpg" alt="">
-                                  </a>
-                                </div>
-                                <div class="card-body">
-                                    <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
-                                    <p>100.000 F CFA</p>
-                                    <a href="/detail" class="btndetail">Détail</a>
-                                </div>
-                            </div>
-                            <div class="content-card">
-                                <div class="card-image">
-                                  <a href="#">
-                                    <img src="/images/2.jpg" alt="">
-                                  </a>
-                                </div>
-                                <div class="card-body">
-                                    <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
-                                    <p>100.000 F CFA</p>
-                                    <a href="/detail" class="btndetail">Détail</a>
-                                </div>
-                            </div>
-                            <div class="content-card">
-                                <div class="card-image">
-                                  <a href="#">
-                                    <img src="/images/4.webp" alt="">
-                                  </a>
-                                </div>
-                                <div class="card-body">
-                                    <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
-                                    <p>100.000 F CFA</p>
-                                    <a href="/detail" class="btndetail">Détail</a>
-                                </div>
-                            </div>
-                            <div class="content-card">
-                                <div class="card-image">
-                                  <a href="#">
-                                    <img src="/images/7.webp" alt="">
-                                  </a>
-                                </div>
-                                <div class="card-body">
-                                    <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
-                                    <p>100.000 F CFA</p>
-                                    <a href="/detail" class="btndetail">Détail</a>
-                                </div>
-                            </div>
-                            <div class="content-card">
-                                <div class="card-image">
-                                  <a href="#">
-                                    <img src="/images/3.jpg" alt="">
-                                  </a>
-                                </div>
-                                <div class="card-body">
-                                    <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
-                                    <p>100.000 F CFA</p>
-                                    <a href="/detail" class="btndetail">Détail</a>
-                                </div>
-                            </div>
-                            <div class="content-card">
-                                <div class="card-image">
-                                  <a href="#">
-                                    <img src="/images/4.webp" alt="">
-                                  </a>
-                                </div>
-                                <div class="card-body">
-                                    <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
-                                    <p>100.000 F CFA</p>
-                                    <a href="/detail" class="btndetail">Détail</a>
-                                </div>
-                            </div>
-                            <div class="content-card">
-                                <div class="card-image">
-                                  <a href="#">
-                                    <img src="/images/1.jpg" alt="">
-                                  </a>
-                                </div>
-                                <div class="card-body">
-                                    <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
-                                    <p>100.000 F CFA</p>
-                                    <a href="/detail" class="btndetail">Détail</a>
-                                </div>
+                            <div class="slider-btns">
+                                <button aria-label="Previous" class="glider-prev">
+                                    <span></span>
+                                </button>
+                                <button aria-label="Next" class="glider-next">
+                                    <span></span>
+                                </button>
                             </div>
                         </div>
-                      
-                      
-            
-                      </div>
-        
-                 </div>
-            </div>
-            <% } %>
-   
-   
-    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
-    <script src="https://code.jquery.com/jquery-migrate-3.3.2.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script  src="https://kit.fontawesome.com/0eca8d30fc.js" crossorigin="anonymous"></script>
-    <script src="/js/glider.min.js"></script>
-    <script src="/js/main.js"></script>
+
+                        <div class="trait_dessus"></div>
+                        <div class="container-cadre">
+                            <div class="glider-contain">
+                                <div class="glider">
+                                    <% article.forEach(function(article){ %>
+                                        <div class="content-card">
+                                            <div class="card-image">
+                                                <a href="/detail/<%= article.id %>">
+                                                    <img src="<%= article.image %>" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="card-body">
+                                                <p id="text">
+                                                    <%= article.nom %>
+                                                        <%= article.model %> - <%= article.ecran %>" -<%= article.reseau
+                                                                    %> - <%= article.rom %> - <%= article.ram %>
+                                                </p>
+                                                <p>
+                                                    <%= article.prix %> F CFA
+                                                </p>
+                                                <a href="/detail/<%= article.id %>" class="btndetail">Détail</a>
+                                            </div>
+                                        </div>
+                                        <% }); %>
+
+                                            <div class="content-card">
+                                                <div class="card-image">
+                                                    <a href="/detail">
+                                                        <img src="/images/3.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
+                                                    <p>100.000 F CFA</p>
+                                                    <a href="/detail" class="btndetail">Détail</a>
+                                                </div>
+                                            </div>
+                                            <div class="content-card">
+                                                <div class="card-image">
+                                                    <a href="/detail">
+                                                        <img src="/images/1.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
+                                                    <p>100.000 F CFA</p>
+                                                    <a href="/detail" class="btndetail">Détail</a>
+                                                </div>
+                                            </div>
+                                            <div class="content-card">
+                                                <div class="card-image">
+                                                    <a href="#">
+                                                        <img src="/images/2.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
+                                                    <p>100.000 F CFA</p>
+                                                    <a href="/detail" class="btndetail">Détail</a>
+                                                </div>
+                                            </div>
+                                            <div class="content-card">
+                                                <div class="card-image">
+                                                    <a href="#">
+                                                        <img src="/images/4.webp" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
+                                                    <p>100.000 F CFA</p>
+                                                    <a href="/detail" class="btndetail">Détail</a>
+                                                </div>
+                                            </div>
+                                            <div class="content-card">
+                                                <div class="card-image">
+                                                    <a href="#">
+                                                        <img src="/images/7.webp" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
+                                                    <p>100.000 F CFA</p>
+                                                    <a href="/detail" class="btndetail">Détail</a>
+                                                </div>
+                                            </div>
+                                            <div class="content-card">
+                                                <div class="card-image">
+                                                    <a href="#">
+                                                        <img src="/images/3.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
+                                                    <p>100.000 F CFA</p>
+                                                    <a href="/detail" class="btndetail">Détail</a>
+                                                </div>
+                                            </div>
+                                            <div class="content-card">
+                                                <div class="card-image">
+                                                    <a href="#">
+                                                        <img src="/images/4.webp" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
+                                                    <p>100.000 F CFA</p>
+                                                    <a href="/detail" class="btndetail">Détail</a>
+                                                </div>
+                                            </div>
+                                            <div class="content-card">
+                                                <div class="card-image">
+                                                    <a href="#">
+                                                        <img src="/images/1.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>Apple IPhone 6 - 4.7" -4G - 16Go - 1Go</p>
+                                                    <p>100.000 F CFA</p>
+                                                    <a href="/detail" class="btndetail">Détail</a>
+                                                </div>
+                                            </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                <% } %>
+
+
+                        <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+                        <script src="https://code.jquery.com/jquery-migrate-3.3.2.js"></script>
+                        <script type="text/javascript"
+                            src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+                        <script src="https://kit.fontawesome.com/0eca8d30fc.js" crossorigin="anonymous"></script>
+                        <script src="/js/glider.min.js"></script>
+                        <script src="/js/main.js"></script>
 </body>
+
 </html>

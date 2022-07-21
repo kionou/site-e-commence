@@ -1,20 +1,33 @@
-const base = require("./data");
 const bcrypt = require("bcrypt")
+const { Sequelize } = require('../models');
+const cat = require('../models/categorie');
+const sequelize = require("./data");
+const categorie = cat(sequelize,Sequelize);
 
 const dataBien = class{
 
     static AfficherCathegorie = () =>{
-        return new Promise ((resolve,reject)=>{
-            let sql ="SELECT * FROM `cathegorie`;"
-            base.query(sql,(error,result)=>{
-                if (result) {
-                    resolve(result)
-                } else {
-                    console.log(error);
-                    reject(error)   
-                }
-            })
+
+          return new Promise(async (next)=>{
+            categorie.findAll().then(resultat => {
+                console.log('resultat',resultat);
+                next({success:resultat})
+            }).catch(error  =>{
+                console.log('error',error);
+                  next({erreur:error})
+            }) 
         })
+        // return new Promise ((resolve,reject)=>{
+        //     let sql ="SELECT * FROM `cathegorie`;"
+        //     base.query(sql,(error,result)=>{
+        //         if (result) {
+        //             resolve(result)
+        //         } else {
+        //             console.log(error);
+        //             reject(error)   
+        //         }
+        //     })
+        // })
     }
 
     static AfficherArticle = () => {

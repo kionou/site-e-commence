@@ -53,12 +53,6 @@ module.exports = {
       dimension: {
         type: Sequelize.STRING
       },
-      date_ajouter: {
-        type: Sequelize.STRING
-      },
-      date_update: {
-        type: Sequelize.STRING
-      },
       poids: {
         type: Sequelize.STRING
       },
@@ -69,7 +63,10 @@ module.exports = {
         type: Sequelize.STRING
       },
       id_cathegorie: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
+      },
+      image: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

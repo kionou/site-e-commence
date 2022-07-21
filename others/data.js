@@ -15,7 +15,7 @@ const  Sequelize  = require("sequelize")
 
 
 
-let sequelize = new Sequelize("e_commerce","postgres","nan2021",{
+let sequelize = new Sequelize("e_commerce","postgres","Laloi2015",{
     dialect:'postgres',
     host:'localhost',
     port:'5432'

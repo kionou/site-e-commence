@@ -29,12 +29,11 @@ module.exports = (sequelize, DataTypes) => {
     connectivite: DataTypes.STRING,
     batterie: DataTypes.STRING,
     dimension: DataTypes.STRING,
-    date_ajouter: DataTypes.STRING,
-    date_update: DataTypes.STRING,
     poids: DataTypes.STRING,
     prix: DataTypes.STRING,
     processeur: DataTypes.STRING,
-    id_cathegorie: DataTypes.STRING
+    id_cathegorie: DataTypes.STRING,
+    image:DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'articles',
