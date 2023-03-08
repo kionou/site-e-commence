@@ -11,15 +11,14 @@ const dataCategorie = require("../others/requetteCategorie");
 const controlleur = class{
     static Accueil = async(req=request,res=response)=>{
         const article    =  await dataArticle.AfficherArticle();
-        console.log('article',article);
         const cathegorie =  await  dataCategorie.AfficherCathegorie();
-        console.log("categorrie",cathegorie);
         res.render('index',{ article:article.success, cathegorie:cathegorie.success})
     
     }
 
     static Detail = async  (req=request,res=response)=>{
         const id = req.params.id
+        console.log('idd',id);
       let article = await  dataArticle.AfficherDetailArticle(id)
        if (article.success) {
               res.render('detail',{success:article.success})
@@ -80,26 +79,19 @@ const controlleur = class{
          const id = req.params.id;
          const liste = await dataArticle.AfficherListeArticle(id)
          const nbre =  await  dataArticle.AfficherNbreArticle(id);
-             res.render('cathegorie',{liste:liste.success,nombre:nbre.success})
-
-        //  .then(success =>{
-        //     //  res.json(success)
-        //      res.render('cathegorie',{success})
-        //  })
-        //  .catch(error =>{
-        //      console.log(error);
-        //  })  
+             res.render('cathegorie',{liste:liste.success,nombre:nbre.success}) 
     }
 
     static Panier = (req=request,res=response)=>{
          const id = req.params.id
-         dataBien.AfficherDetailArticle(id)
-         .then(success =>{
-              res.render('panier',{success})
-         })
-         .catch(error =>{
-             console.log(error);
-         })
+         res.render('panier')
+
+        //  dataBien.AfficherDetailArticle(id)
+        //  .then(success =>{
+        //  })
+        //  .catch(error =>{
+        //      console.log(error);
+        //  })
     }
 
      static Commande = (req=request,res=response)=>{

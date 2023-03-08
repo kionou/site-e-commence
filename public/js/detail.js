@@ -1,7 +1,3 @@
-console.log('qtdyufyilkjh');
-
-
-
 let icon = document.querySelector('.search');
 let input = document.querySelector('.inputsearch')
 
@@ -16,6 +12,8 @@ const moins = document.querySelector('#decrement');
 const plus = document.querySelector('#increment');
 const result = document.querySelector('#input');
 let prix = document.querySelector('.prix p span').innerHTML;
+let rs_prix = document.querySelector('#prix ');
+console.log('prix',prix);
 
 
 let a = 1
@@ -23,6 +21,8 @@ plus.addEventListener('click',()=>{
 a++
 a = (a < 10 ) ? "0" + a :a;
 result.innerText = a;
+rs_prix.innerText = parseInt(prix) * a
+
 
 })
 
@@ -32,7 +32,7 @@ moins.addEventListener('click',()=>{
   a--;
   a = (a < 10 ) ? "0" + a :a;
   result.innerText = a;
-
+   rs_prix.innerText = rs_prix.innerHTML - prix
   }
  })
 
@@ -43,11 +43,9 @@ let nom_ar = document.querySelector('.nom_ar')
 let prix_ar= document.querySelector('#prix')
 let model_ar = document.querySelector('.model_ar')
 let image_ar = document.querySelector('.image ')
-console.log(image_ar.src);
-
-
 
 btn_envoyer.addEventListener('click',(e)=>{
+  e.preventDefault()
     let articles=[];
     let article ={
     id:btn_envoyer.value,
@@ -78,7 +76,7 @@ btn_envoyer.addEventListener('click',(e)=>{
                   console.log('new article');
                 }else{
                     console.log('id identique');
-                    console.log(a);
+                    console.log("vvvvvv",a);
                       a = a+1
                 }
          })
@@ -89,7 +87,7 @@ btn_envoyer.addEventListener('click',(e)=>{
             console.log('articles[1]',articles[1]);
             articles[1] = parseInt(articles[1]) + parseInt(result.innerHTML);
             localStorage.setItem("articles",JSON.stringify(articleDansLocalstorage))
-            console.log(  articles);
+            console.log("articlesss" , articles);
           }
               
       
